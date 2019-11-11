@@ -1,11 +1,8 @@
 /**navigation toolbar**/
 
-.site-header{
-    background: grey;
-    min-height: 40px;
-}
-
 .site-header .container{
+    background: forestgreen;
+    min-height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -41,6 +38,6 @@
 }
 
 .site-header .main-menu-item.active a:hover {
-    border-top-color:red;
+    border-top-color: red;
 }
 
