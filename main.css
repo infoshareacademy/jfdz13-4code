@@ -1,18 +1,14 @@
 /**navigation toolbar**/
 
-.site-header{
-    width: 100%;
-    background: forestgreen;
-}
-
 .site-header .container{
     background: forestgreen;
     min-height: 40px;
+    width: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    width: 1300px;
+    width: 100%;
 }
 
 
@@ -21,14 +17,16 @@
     flex-direction: row;
     list-style-type: none;
     font-weight: 600;
-    padding: 0;
-    margin: 0;
+    padding: 10 10;
+    margin: 10;
+    
 }
 
 .site-header .main-menu-item a {
     color: #262626;
     text-decoration: none;
     display: block;
+    float: left;
     border-bottom: 3px solid transparent;
     padding-top: 5px;
     transition: border-top-color 0.2s;
