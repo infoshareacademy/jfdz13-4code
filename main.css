@@ -1,12 +1,18 @@
 /**navigation toolbar**/
 
+.site-header{
+    width: 100%;
+    background: forestgreen;
+}
+
 .site-header .container{
     background: forestgreen;
     min-height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
+    width: 1300px;
 }
 
 
@@ -41,5 +47,9 @@
 
 .site-header .main-menu-item.active a:hover {
     border-top-color: red;
+}
+
+.hero {
+    width: 100%;
 }
 
