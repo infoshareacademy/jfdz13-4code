@@ -1,14 +1,30 @@
+/**Color palette**/
+:root{
+    --color1: #544F4B;
+    --color2: #28282B;
+    --color3: #47312D;
+    --color4: #845A46;
+    --color5: #B8A18B;
+    --color6: #D0C6BB;
+}
+
+
 /**navigation toolbar**/
 
+.site-header{
+    width: 1400px;
+}
+
 .site-header .container{
-    background: forestgreen;
+    background: var(--color4);
     min-height: 40px;
     width: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    width: 100%;
+    width: auto;
+    flex-grow: 1;
 }
 
 
@@ -49,5 +65,10 @@
 
 .hero {
     width: 100%;
+}
+
+.carousel-slide{
+    width: 1500px;
+    align-content: center;
 }
 
