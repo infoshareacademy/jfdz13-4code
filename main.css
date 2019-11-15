@@ -9,6 +9,32 @@
     align-items: center;
 }
 
+.site-header:after{
+    content: "";
+    position: absolute;      
+    display: block;
+  
+    height: 10px;
+    bottom: -10px; /* -height */
+    left:0;
+    right:0;
+  
+    /* TODO Add browser prefixes */
+    background:
+      linear-gradient(
+        45deg, transparent 33.333%,
+        #2B3A48 33.333%, #2B3A48 66.667%,
+        transparent 66.667%
+      ),linear-gradient(
+        -45deg, transparent 33.333%,
+        #2B3A48 33.333%, #2B3A48 66.667%,
+        transparent 66.667%
+      );
+  
+      background-size: 8px 20px; /* toothSize doubleHeight */
+      background-position: 0 -10px; /* horizontalOffset -height */
+}
+
 .site-header .main-menu {
     display: flex;
     flex-direction: row;
@@ -31,6 +57,7 @@
 
 .site-header .main-menu-item a:hover{
     border-color: red;
+    transform: rotate(360deg);
 }
 
 .site-header .main-menu-item.active a {
