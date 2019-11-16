@@ -11,9 +11,7 @@
 
 /**navigation toolbar**/
 
-.site-header{
-    width: 1400px;
-}
+
 
 .site-header .container{
     background: var(--color4);
@@ -27,6 +25,12 @@
     flex-grow: 1;
 }
 
+.site-header .logo{
+    width: 60px;
+    height: 60px;
+    align-content: ;
+}
+
 
 .site-header .main-menu{
     display: flex;
@@ -35,40 +39,38 @@
     font-weight: 600;
     padding: 10 10;
     margin: 10;
-    
 }
+
+
+
 
 .site-header .main-menu-item a {
     color: #262626;
     text-decoration: none;
     display: block;
     float: left;
-    border-bottom: 3px solid transparent;
     padding-top: 5px;
     transition: border-top-color 0.2s;
     margin-right: 35px;
-    font-size: 16px;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.site-header .main-menu i {
+    font-size: 25px;
+    
 }
 
 .site-header .main-menu-item a:hover{
-    border-color: red;
-    transform: rotate(360deg);
+    background: url(/img/paw.png)
+    transition-delay: .1s;
+	transition-duration: 2s;
+    
 }
 
-.site-header .main-menu-item.active a {
-    border-top-color: red;
-}
 
-.site-header .main-menu-item.active a:hover {
-    border-top-color: red;
-}
 
-.hero {
-    width: 100%;
-}
 
-.carousel-slide{
-    width: 1500px;
-    align-content: center;
-}
+
+
 
