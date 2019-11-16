@@ -72,6 +72,20 @@ html {
     justify-content: center;
 }
 
+.functions__small-container {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    min-width: 500px
+}
+
+@media (max-width: 500px) {
+    .functions__small-container {
+        flex-wrap: wrap;
+        min-width: 250px;
+    }
+}
+
 .functions-content {
     display: flex;
     flex-direction: column;
@@ -81,7 +95,7 @@ html {
     color: var(--color3);
     transition: all;
     min-width: 250px;
-    width: 25%;
+    width: 50%;
 }
 
 .slidedown {
