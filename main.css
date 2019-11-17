@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ :root {
+    --max-size: 1500px;
+    --gutter: 1rem;
+    --font-mid-size-title: 25px;
+    --font-size-title: 35px;
+    --font-title: 'Proza Libre', sans-serif;
+    --font-text: 'Open Sans', sans-serif;
+    --color-light-grey: #F5F3F2;
+    --color-light-red: #FDDFDE;
+    --color-red: #F66465;
+    --color-dark-red: #AB3B3D;
+    --color-dark-grey: #56555C;
+    --color-grey: #DFDEDC;
+ }
