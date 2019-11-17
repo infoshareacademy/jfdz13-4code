@@ -1,11 +1,24 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
- :root {
-    --max-size: 1400px;
-    --gutter: 1rem;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+:root {
+   --max-size: 1500px;
+   --gutter: 1rem;
+   --font-mid-size-title: 25px;
+   --font-size-title: 35px;
+   --font-title: 'Proza Libre', sans-serif;
+   --font-text: 'Open Sans', sans-serif;
+   --color-light-grey: #F5F3F2;
+   --color-light-red: #FDDFDE;
+   --color-red: #F66465;
+   --color-dark-red: #AB3B3D;
+   --color-dark-grey: #56555C;
+   --color-grey: #DFDEDC;
+}
+
+
  } 
  .about-us-container{
     max-width: 1200px;
@@ -17,6 +30,7 @@
      margin: 0 auto;
      padding:30px;
      text-align:center;
+     font-family: var(--font-title);
  }
  .about-us-main-box{
      display: flex;
@@ -39,6 +53,7 @@
     position: absolute;
     display: block;
     max-width:250px;
+    font-family: var(--font-text);
     }
 
  .about-us-name{
@@ -53,7 +68,10 @@
     list-style: none;
     padding: 10px;
     display: inline-block;
+    font-size:20px;
+    position:relative;
     }
+    
  .about-us-social-box{
     position: absolute;
     bottom:20px;
@@ -62,7 +80,8 @@
     }
     .fa a{
         width:50px;
-        height: 50px;
+        height:50px;
+        
     }
     .fa{
         color: black;
