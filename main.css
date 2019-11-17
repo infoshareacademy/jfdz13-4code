@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- }
- :root {
+}
+
+:root {
     --max-size: 1500px;
     --gutter: 1rem;
     --font-mid-size-title: 25px;
@@ -16,4 +17,110 @@
     --color-dark-red: #AB3B3D;
     --color-dark-grey: #56555C;
     --color-grey: #DFDEDC;
- }
+}
+
+/*smooth scroll*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+.break-container {
+    max-width: var(--max-size);
+    height: 150px;
+    margin: 0 auto;
+    background-image: url(images/walk.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    .break-container {
+        background-size: 150%;
+    }
+}
+
+.functions {
+    max-width: var(--max-size);
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.functions__container {
+    display: flex;
+    margin: calc(var(--gutter) * 2);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.functions__small-container {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    min-width: 500px
+}
+
+@media (max-width: 500px) {
+    .functions__small-container {
+        flex-wrap: wrap;
+        min-width: 250px;
+    }
+}
+
+.functions-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: var(--gutter);
+    align-items: center;
+    color: var(--color-text);
+    transition: all;
+    min-width: 250px;
+    width: 50%;
+}
+
+.slidedown {
+    animation: slidedown 800ms ease-in;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+@keyframes slidedown {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.functions-content__image {
+    max-width: 150px;
+}
+
+.functions-content__image img {
+    width: 100%;
+}
+
+.functions-text__title {
+    font-size: var(--font-mid-size-title);
+    text-align: center;
+    margin: var(--gutter) 0;
+    font-family: var(--font-title);
+}
+
+.functions-text__description {
+    text-align: justify;
+    padding: var(--gutter) 0;
+    font-family: var(--font-text);
+}
