@@ -155,7 +155,7 @@ html {
     flex-grow: 1;
     padding: var(--gutter);
     align-items: center;
-    color: var(--color-text);
+    color: var(--color-dark-grey);
     transition: all;
     min-width: 250px;
     width: 50%;
