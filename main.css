@@ -118,11 +118,6 @@
 .fling-minislide img:nth-child(2){animation-delay:10s;}
 .fling-minislide img:nth-child(1){animation-delay:15s;}
 
-.functions{
-    background: red;
-    height: 1000px;
-    width: 100%;
-}
 
 
 
