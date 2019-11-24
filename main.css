@@ -34,6 +34,7 @@ margin: 0 auto;
     margin: calc(var(--gutter) * 2);
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0  auto;
 
 }
 
@@ -58,6 +59,7 @@ font-family: var(--font-title);
 .about-us-small-box{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-us-inner-box {
