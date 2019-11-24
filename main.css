@@ -298,7 +298,7 @@ flex-wrap: wrap;
     background-color: white;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 70px auto 0 auto;
 }
 
 .functions__container {
