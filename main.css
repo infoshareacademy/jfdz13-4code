@@ -248,6 +248,8 @@ visibility: visible;
    border:1px solid black;
    padding:10px;
    border-radius: 50%;
+   width: 42px;
+   height: 42px;
 }
 .fa:hover {
     color:white;;
