@@ -302,7 +302,7 @@ flex-wrap: wrap;
     background-color: white;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 70px auto 0 auto;
 }
 
 .functions__container {
@@ -377,3 +377,149 @@ flex-wrap: wrap;
     font-family: var(--font-text);
 }
 
+.description {
+    position: relative;
+    width: 100%;
+    background-color: white;
+   
+}
+
+
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background-color: white;
+     
+    
+}
+
+.heroImage {
+    height: 90%;
+    width: 100%;
+    background-image: url(images/doggy5.jpg);
+    background-size: cover;
+    margin-bottom: var(--gutter);
+    background-repeat: no-repeat;
+background-position: center;
+    position: relative;
+    display: block;
+    margin-top: 2rem;
+    
+  
+   
+}
+
+.content {
+    width: 100%;
+    padding: var(--gutter);
+    padding: 3rem;
+    margin-bottom: 40px;
+   
+   
+}
+
+.content__header {
+    color: var(--color-dark);
+    margin: 0 0 var(--gutter);
+    font-size: 2.6rem;
+    font-family: var(--font-header);
+    
+    text-align: center;
+   
+}
+
+.content__description {
+    color: darkgrey;
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    margin-bottom: calc( var(--gutter) * 2);
+    
+   
+}
+.content__description-title {
+  
+    font-size: 1.2rem;
+    font-family: 'Merriweather', serif;
+    margin-bottom: calc( var(--gutter) * 3);
+   color: black;
+text-align: center;
+    
+    font-style: italic;
+    color:  #56555C;
+   
+
+}
+@media (min-width: 300px) {
+    .heroImage {
+        width: 100%;
+        height: 30vh;
+        margin: 0;
+        background-image: cover;
+        
+    }
+@media (min-width: 768px) {
+    .heroImage {
+        width: 90%;
+        height: 70vh;
+        margin: 0;
+        background-image: cover;
+        
+    }
+@media (min-width: 1024px) {
+    .heroImage {
+        width: 100%;
+        height: 80vh;
+        margin: 0;
+        background-image: cover;
+        
+    }
+@media (min-width: 1440px) {
+    .heroImage {
+        width: 50%;
+        height: 80vh;
+        margin: 0;
+        background-image: cover;
+        
+    }
+    .content {
+        width: 50%;
+    }
+}
+.stars {
+    text-align: center;
+        color:black;
+    background-color: white;
+}
+.paw{
+   
+     background-image: url(images/paw-small.png);
+    background-size: cover;
+    background-size: 2%;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin-bottom: var(--gutter);
+    height: 4vh;
+    background-position: center;
+   
+}
+ .section-fresh-action {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 290px;
+    border: none;
+    background:orange;
+    color: white;
+     border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(255, 96, 51, 0.3);
+     margin-top: 30px;
+    }
