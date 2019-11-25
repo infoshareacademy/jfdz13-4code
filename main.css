@@ -8,7 +8,7 @@
     --max-size: 1500px;
     --gutter: 1rem;
     --font-mid-size-title: 25px;
-    --font-size-title: 35px;
+    --font-size-title: 40px;
     --font-title: 'Proza Libre', sans-serif;
     --font-text: 'Open Sans', sans-serif;
     --color-light-grey: #F5F3F2;
@@ -541,8 +541,121 @@ html {
     margin-bottom: -25px;
 }
 
+.newsletter__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-content__title {
+    font-family: var(--font-title);
+    font-size: var(--font-size-title);
+}
+
+.newsletter-content__subscribe {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.subscribe-button__animation {
+    width: 200px;
+    height: 125px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe-button__animation  span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #47b8b473;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0,5s;
+    animation: animate 5s linear infinite;
+    z-index: -1;
+}
+
+.subscribe-button__animation:hover  span:nth-child(1){
+    border: none;
+    background: #47b8b498;
+}
+
+.subscribe-button__animation  span:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #47b8b473;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0,5s;
+    animation: animate2 3s linear infinite;
+    z-index: -1;
+}
+
+.subscribe-button__animation:hover  span:nth-child(2){
+    border: none;
+    background: #47b8b498;
+}
+
+.subscribe-button__animation  span:nth-child(3){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #47b8b473;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0,5s;
+    animation: animate 2s linear infinite;
+    z-index: -1;
+}
+
+.subscribe-button__animation:hover  span:nth-child(3){
+    border: none;
+    background: #47b8b498;
+}
+
+@keyframes animate {
+    0%
+    {
+        transform: rotate(0deg)
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0%
+    {
+        transform: rotate(360deg)
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
+
+.subscribe-button{
+    border: none;
+    background-color:  #47b8b400;
+    cursor: pointer;
+    font-family: var(--font-text);
+    font-size: var(--font-mid-size-title);
+    font-weight: 600;
+    color: white;
+}
+
 .footer {
-    height: 50px;
+    height: 150px;
     width: 100%;
     background-color: #47b8b4;
 }
