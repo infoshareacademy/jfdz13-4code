@@ -45,13 +45,12 @@ html {
     align-items: stretch;
     width: 100%;
     flex-grow: 1;
-    /* position: sticky; */
+    position: sticky;
     margin: auto;
 }
 
 .site-header .logo {
-    width: 80px;
-    height: 80px;
+    height: 100px;
     align-content: center;
     padding: 5px;
     margin-left: 10px;
@@ -304,7 +303,7 @@ html {
 
 .break-container {
     max-width: var(--max-size);
-    height: 150px;
+    height: 200px;
     margin: 0 auto;
     background-image: url(images/walk.png);
     background-repeat: no-repeat;
@@ -562,7 +561,7 @@ html {
 
 .newsletter__image {
     margin-bottom: -25px;
-    max-width: 580px;
+    max-width: 600px;
     width: 100%;
 }
 
@@ -613,11 +612,14 @@ html {
     padding-left: 25px;
     font-family: var(--font-text);
     font-size: var(--font-size-text);
-    color: var(--color-dark-grey)
+    color: var(--color-dark-grey);
+    transition: 1s ;
 }
 
 .subscribe__input:focus {
     outline: none;
+    background-color: #47b8b473;
+    border-color: #47b8b4;
 }
 
 .subscribe-button__animation {
@@ -712,7 +714,81 @@ html {
 }
 
 .footer {
-    height: 150px;
     width: 100%;
     background-color: #47b8b4;
+}
+
+.footer__content {
+    max-width: var(--max-size);
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 30px;
+    color: white;
+    font-family: var(--font-text);
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 770px) {
+    .footer__content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer__copyright{
+        align-items: center;
+}}
+
+.footer__adress{
+    margin: 15px 20px;
+}
+
+.footer-adress__title{
+    font-size: var(--font-mid-size-title);
+    position: relative;
+}
+
+.footer-adress__title::before{
+    content: url(images/locate-place.png);
+    position: absolute;
+    left: -40px;
+}
+
+.footer-adress__text{
+    font-size: var(--font-size-text);
+}
+
+.footer__contact {
+    margin: 15px 20px;
+}
+
+.footer-contact__title {
+    font-size: var(--font-mid-size-title);
+    position: relative;
+}
+
+.footer-contact__title::before{
+    content: url(images/call-answer.png);
+    position: absolute;
+    left: -40px;
+}
+
+.footer-contact__text{
+    font-size: var(--font-size-text);
+}
+
+.footer__copyright{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 20px;
+}
+
+.footer-copyright__logo {
+    height: 80px;
+    width: 80px;
+}
+
+.footer-copyright__text{
+    font-size: var(--font-size-text);
 }
