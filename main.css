@@ -9,13 +9,14 @@
     --gutter: 1rem;
     --font-mid-size-title: 25px;
     --font-size-title: 40px;
+    --font-size-text: 18px;
     --font-title: 'Proza Libre', sans-serif;
     --font-text: 'Open Sans', sans-serif;
     --color-light-grey: #F5F3F2;
     --color-light-red: #FDDFDE;
     --color-red: #F66465;
     --color-dark-red: #AB3B3D;
-    --color-dark-grey: #56555C;
+    --color-dark-grey: rgb(67, 66, 71);
     --color-grey: #DFDEDC;
 }
 
@@ -399,6 +400,7 @@ html {
     text-align: justify;
     padding: var(--gutter) 0;
     font-family: var(--font-text);
+    font-size: var(--font-size-text);
 }
 
 .description {
@@ -534,29 +536,88 @@ html {
     display: flex;
     max-width: var(--max-size);
     width: 100%;
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 1378px) {
+    .newsletter {
+        justify-content: center;
+    }
+    .newsletter__content {
+        margin: calc(var(--gutter) * 2);
+    }
+    .newsletter-content__subscribe {
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 713px) {
+    .subscribe-button__animation {
+        margin-top: 70px;
+    }
 }
 
 .newsletter__image {
     margin-bottom: -25px;
+    max-width: 580px;
+    width: 100%;
 }
 
 .newsletter__content {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    margin-bottom: calc(var(--gutter) * 3);
+    max-width: 800px;
+    width: 100%;
 }
 
 .newsletter-content__title {
     font-family: var(--font-title);
     font-size: var(--font-size-title);
+    margin: var(--gutter)
+}
+
+.newsletter-content__text {
+    font-family: var(--font-text);
+    font-size: var(--font-size-text);
+    color: var(--color-dark-grey);
+    text-align: justify;
+    margin: var(--gutter)
 }
 
 .newsletter-content__subscribe {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-grow: 1;
+}
+
+.subscribe__input {
+    max-width: 450px;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    border: solid 2px var(--color-dark-grey);
+}
+
+.subscribe__input::placeholder {
+    color: var(--color-dark-grey);
+    font-family: var(--font-text);
+    font-size: var(--font-size-text);
+}
+
+.subscribe__input[type=email] {
+    padding-left: 25px;
+    font-family: var(--font-text);
+    font-size: var(--font-size-text);
+    color: var(--color-dark-grey)
+}
+
+.subscribe__input:focus {
+    outline: none;
 }
 
 .subscribe-button__animation {
@@ -568,7 +629,7 @@ html {
     align-items: center;
 }
 
-.subscribe-button__animation  span:nth-child(1){
+.subscribe-button__animation span:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
@@ -576,17 +637,17 @@ html {
     height: 100%;
     background: #47b8b473;
     border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    transition: 0,5s;
-    animation: animate 5s linear infinite;
+    transition: 0.5s;
+    animation: animate 9s linear infinite;
     z-index: -1;
 }
 
-.subscribe-button__animation:hover  span:nth-child(1){
+.subscribe-button__animation:hover span:nth-child(1) {
     border: none;
     background: #47b8b498;
 }
 
-.subscribe-button__animation  span:nth-child(2){
+.subscribe-button__animation span:nth-child(2) {
     position: absolute;
     top: 0;
     left: 0;
@@ -594,17 +655,17 @@ html {
     height: 100%;
     background: #47b8b473;
     border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    transition: 0,5s;
-    animation: animate2 3s linear infinite;
+    transition: 0.5s;
+    animation: animate2 4s linear infinite;
     z-index: -1;
 }
 
-.subscribe-button__animation:hover  span:nth-child(2){
+.subscribe-button__animation:hover span:nth-child(2) {
     border: none;
     background: #47b8b498;
 }
 
-.subscribe-button__animation  span:nth-child(3){
+.subscribe-button__animation span:nth-child(3) {
     position: absolute;
     top: 0;
     left: 0;
@@ -612,41 +673,37 @@ html {
     height: 100%;
     background: #47b8b473;
     border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-    transition: 0,5s;
-    animation: animate 2s linear infinite;
+    transition: 0.5s;
+    animation: animate 2.7s linear infinite;
     z-index: -1;
 }
 
-.subscribe-button__animation:hover  span:nth-child(3){
+.subscribe-button__animation:hover span:nth-child(3) {
     border: none;
     background: #47b8b498;
 }
 
 @keyframes animate {
-    0%
-    {
+    0% {
         transform: rotate(0deg)
     }
-    100%
-    {
+    100% {
         transform: rotate(360deg);
     }
 }
 
 @keyframes animate2 {
-    0%
-    {
+    0% {
         transform: rotate(360deg)
     }
-    100%
-    {
+    100% {
         transform: rotate(0deg);
     }
 }
 
-.subscribe-button{
+.subscribe-button {
     border: none;
-    background-color:  #47b8b400;
+    background-color: #47b8b400;
     cursor: pointer;
     font-family: var(--font-text);
     font-size: var(--font-mid-size-title);
