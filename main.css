@@ -14,7 +14,7 @@
    --color-light-grey: #F5F3F2;
    --color-light-red: #FDDFDE;
    --color-red: #F66465;
-   --color-dark-red: #AB3B3D;
+   --color-dark-red: rgb(171, 59, 61);
    --color-dark-grey: #56555C;
    --color-grey: #DFDEDC;
 }
@@ -147,7 +147,6 @@ html {
     
 .about-us-container {
     display: flex;
-    margin: calc(var(--gutter) * 2);
     flex-wrap: wrap;
     justify-content: center;
     margin: 0  auto;
@@ -161,16 +160,22 @@ margin: calc(var(--gutter) * 2);
 padding: 30px;
 text-align: center;
 font-family: var(--font-title);
+max-width: var(--max-size);
+height: 150px;
+margin: 0 auto;
+background-image: url(images/istockphoto-959084682-1024x1024.jpg);
+background-attachment: fixed;
+display: flex;
+justify-content: center;
+align-items: center;    
+font-size: 2.6rem;
 }
-
-.about-us-title h2{
-    font-size: var(--font-size-title);
-}
-
 
 .about-us-main-box {
    display: flex;
    flex-wrap: wrap;
+   justify-content: center;
+
 }
 .about-us-small-box{
     display: flex;
@@ -183,6 +188,7 @@ font-family: var(--font-title);
    height: 550px;
    display: block;
    margin:10px;
+   margin-top: 40px;
 }
 
 .about-us-inner-box img {
@@ -194,6 +200,7 @@ font-family: var(--font-title);
    border: 4px solid white;
    box-shadow: 0 0 20px 10px var(--color-grey);
    object-fit: cover;
+
 }
 
 
@@ -204,6 +211,7 @@ font-family: var(--font-title);
    width:100%;
    text-align: center;
    visibility: hidden;
+   padding: 15px;
 }
 
 .about-us-inner-box:hover .about-us-text {
@@ -219,7 +227,7 @@ visibility: visible;
 .about-us-description {
     font-size:15px;
     font-family: var(--font-text);
-    margin-bottom:20px;
+    margin-bottom:10px;
     word-wrap: break-word;
    
     
@@ -243,7 +251,7 @@ visibility: visible;
    height: 50px;
 }
 
-.fa {
+.social-icons .fa {
    color: black;
    border:1px solid black;
    padding:10px;
@@ -252,7 +260,7 @@ visibility: visible;
    height: 42px;
 }
 .fa:hover {
-    color:white;;
+    color:white;
     border:1px solid black;
     background-color: black;
   
@@ -496,7 +504,7 @@ text-align: center;
 }
 .paw{
    
-     background-image: url(images/paw-small.png);
+    background-image: url(images/paw-small.png);
     background-size: cover;
     background-size: 2%;
     background-repeat: no-repeat;
