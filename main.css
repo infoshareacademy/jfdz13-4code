@@ -5,20 +5,6 @@
 }
 
 :root {
-<<<<<<< HEAD
-   --max-size: 1500px;
-   --gutter: 1rem;
-   --font-mid-size-title: 25px;
-   --font-size-title: 35px;
-   --font-title: 'Proza Libre', sans-serif;
-   --font-text: 'Open Sans', sans-serif;
-   --color-light-grey: #F5F3F2;
-   --color-light-red: #FDDFDE;
-   --color-red: #F66465;
-   --color-dark-red: rgb(171, 59, 61);
-   --color-dark-grey: #56555C;
-   --color-grey: #DFDEDC;
-=======
     --max-size: 1500px;
     --gutter: 1rem;
     --font-mid-size-title: 25px;
@@ -32,7 +18,6 @@
     --color-dark-red: #AB3B3D;
     --color-dark-grey: rgb(67, 66, 71);
     --color-grey: #DFDEDC;
->>>>>>> 753442ab811d3414c815ad5b82b4ee726f5a7434
 }
 
 /*smooth scroll*/
@@ -205,7 +190,6 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-<<<<<<< HEAD
     margin: 0  auto;
 
 }
@@ -218,7 +202,7 @@ padding: 30px;
 text-align: center;
 font-family: var(--font-title);
 max-width: var(--max-size);
-height: 150px;
+height: 200px;
 margin: 0 auto;
 background-image: url(images/istockphoto-959084682-1024x1024.jpg);
 background-attachment: fixed;
@@ -233,22 +217,6 @@ font-size: 2.6rem;
    flex-wrap: wrap;
    justify-content: center;
 
-=======
-}
-
-.about-us-title {
-    width: 100%;
-    margin: calc(var(--gutter) * 2);
-    padding: 30px;
-    text-align: center;
-    font-family: var(--font-title);
-    font-size: var(--font-size-title);
-}
-
-.about-us-main-box {
-    display: flex;
-    flex-wrap: wrap;
->>>>>>> 753442ab811d3414c815ad5b82b4ee726f5a7434
 }
 
 .about-us-small-box {
@@ -258,12 +226,9 @@ font-size: 2.6rem;
 }
 
 .about-us-inner-box {
-<<<<<<< HEAD
    position: relative;
-   height: 550px;
    display: block;
-   margin:10px;
-   margin-top: 40px;
+   margin: 40px 15px 100px 15px;
 }
 
 .about-us-inner-box img {
@@ -275,27 +240,9 @@ font-size: 2.6rem;
    border: 4px solid white;
    box-shadow: 0 0 20px 10px var(--color-grey);
    object-fit: cover;
-
-=======
-    position: relative;
-    display: block;
-    margin: 10px;
-}
-
-.about-us-inner-box img {
-    height: 280px;
-    width: 280px;
-    border-radius: 50%;
-    position: relative;
-    flex-wrap: wrap;
-    border: 4px solid white;
-    box-shadow: 0 0 20px 10px var(--color-grey);
-    object-fit: cover;
->>>>>>> 753442ab811d3414c815ad5b82b4ee726f5a7434
 }
 
 .about-us-text {
-<<<<<<< HEAD
    position: absolute;
    top:70px;
    font-family: var(--font-text);
@@ -303,14 +250,6 @@ font-size: 2.6rem;
    text-align: center;
    visibility: hidden;
    padding: 15px;
-=======
-    position: absolute;
-    top: 70px;
-    font-family: var(--font-text);
-    width: 100%;
-    text-align: center;
-    visibility: hidden;
->>>>>>> 753442ab811d3414c815ad5b82b4ee726f5a7434
 }
 
 .about-us-inner-box:hover .about-us-text {
@@ -324,11 +263,7 @@ font-size: 2.6rem;
 .about-us-description {
     font-size: 15px;
     font-family: var(--font-text);
-<<<<<<< HEAD
     margin-bottom:10px;
-=======
-    margin-bottom: 20px;
->>>>>>> 753442ab811d3414c815ad5b82b4ee726f5a7434
     word-wrap: break-word;
 }
 
@@ -348,7 +283,6 @@ font-size: 2.6rem;
     height: 50px;
 }
 
-<<<<<<< HEAD
 .social-icons .fa {
    color: black;
    border:1px solid black;
@@ -356,24 +290,11 @@ font-size: 2.6rem;
    border-radius: 50%;
    width: 42px;
    height: 42px;
-=======
-.fa {
-    color: black;
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 50%;
->>>>>>> 753442ab811d3414c815ad5b82b4ee726f5a7434
 }
 
 .fa:hover {
-<<<<<<< HEAD
     color:white;
     border:1px solid black;
-=======
-    color: white;
-    ;
-    border: 1px solid black;
->>>>>>> 753442ab811d3414c815ad5b82b4ee726f5a7434
     background-color: black;
 }
 
@@ -420,7 +341,7 @@ font-size: 2.6rem;
     background-color: white;
     justify-content: center;
     align-items: center;
-    margin: 70px auto 0 auto;
+    margin: 100px auto 100px auto;
 }
 
 .functions__container {
@@ -594,7 +515,6 @@ font-size: 2.6rem;
         width: 50%;
     }
 }
-<<<<<<< HEAD
 .stars {
     text-align: center;
         color:black;
@@ -602,10 +522,6 @@ font-size: 2.6rem;
 }
 .paw{
    
-=======
-
-.paw {
->>>>>>> 753442ab811d3414c815ad5b82b4ee726f5a7434
     background-image: url(images/paw-small.png);
     background-size: cover;
     background-size: 2%;
