@@ -50,7 +50,7 @@ html {
 }
 
 .site-header .logo{
-    max-width: 100px;
+    max-width: 90px;
     width: 100%;
     height: auto;
     align-content: center;
@@ -59,7 +59,7 @@ html {
 }
 
 .site-header .name {
-    max-width: 100px;
+    max-width: 150px;
     width: 100%;
     height: auto;
     align-content: center;
@@ -93,6 +93,11 @@ html {
     padding: 15px;
     color: white;
 }
+
+@media (max-width: 700px) {
+
+}
+
 
 
 /* picture slideshow  */
