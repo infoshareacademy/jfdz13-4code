@@ -17,7 +17,7 @@
     --color-red: #F66465;
     --color-dark-red: #AB3B3D;
     --color-dark-grey: rgb(67, 66, 71);
-    --color-grey: rgba(53, 46, 46, 0.65);
+    --color-grey: rgba(136, 117, 117, 0.65);
 }
 
 /*smooth scroll*/
@@ -49,7 +49,7 @@ html {
     z-index: 1;
 }
 
-.site-header .logo{
+.site-header .logo {
     max-width: 100px;
     width: 100%;
     height: auto;
@@ -59,14 +59,14 @@ html {
 }
 
 .site-header .name {
-    max-width: 100px;
+    max-width: 160px;
     width: 100%;
     height: auto;
     align-content: center;
-    padding: 5px;
+    padding-bottom: 10px;
 }
 
-.site-header .main-menu{
+.site-header .main-menu {
     display: flex;
     align-content: center;
     flex-direction: row;
@@ -94,7 +94,6 @@ html {
     color: white;
 }
 
-
 /* picture slideshow  */
 
 .site-hero {
@@ -105,7 +104,6 @@ html {
     position: static;
     z-index: 2;
     object-fit: cover;
-    
 }
 
 .site-hero .fling-minislide {
@@ -192,9 +190,9 @@ html {
 
 .about-us-container {
     display: flex;
-    margin: calc(var(--gutter) * 2);
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .about-us-title {
@@ -203,23 +201,33 @@ html {
     padding: 30px;
     text-align: center;
     font-family: var(--font-title);
-    font-size: var(--font-size-title);
+    max-width: var(--max-size);
+    height: 200px;
+    margin: 0 auto;
+    background-image: url(images/istockphoto-959084682-1024x1024.jpg);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6rem;
 }
 
 .about-us-main-box {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-us-small-box {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-us-inner-box {
     position: relative;
     display: block;
-    margin: 10px;
+    margin: 40px 15px 100px 15px;
 }
 
 .about-us-inner-box img {
@@ -240,6 +248,7 @@ html {
     width: 100%;
     text-align: center;
     visibility: hidden;
+    padding: 15px;
 }
 
 .about-us-inner-box:hover .about-us-text {
@@ -253,7 +262,7 @@ html {
 .about-us-description {
     font-size: 15px;
     font-family: var(--font-text);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     word-wrap: break-word;
 }
 
@@ -278,6 +287,8 @@ html {
     border: 1px solid black;
     padding: 10px;
     border-radius: 50%;
+    width: 42px;
+    height: 42px;
 }
 
 .social-icons .fa:hover {
@@ -329,7 +340,7 @@ html {
     background-color: white;
     justify-content: center;
     align-items: center;
-    margin: 70px auto 0 auto;
+    margin: 100px auto 100px auto;
 }
 
 .functions__container {
@@ -502,6 +513,12 @@ html {
     .content {
         width: 50%;
     }
+}
+
+.stars {
+    text-align: center;
+    color: black;
+    background-color: white;
 }
 
 .paw {
