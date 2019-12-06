@@ -193,22 +193,28 @@ html {
     margin: 0  auto;
 
 }
-
+.about-us-break-container {
+    height: 200px;
+    margin: 0 auto;
+    background-image: url(images/preview_70246.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    max-width: var(--max-size);
+    width: 100%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
 .about-us-title  {
 width:100%;
 margin: calc(var(--gutter) * 2);
-padding: 30px;
+padding: 30px 10px 15px 10px;
+margin-bottom: 0;
 text-align: center;
-font-family: var(--font-title);
-max-width: var(--max-size);
-height: 200px;
-margin: 0 auto;
-background-image: url(images/istockphoto-959084682-1024x1024.jpg);
-background-attachment: fixed;
-display: flex;
-justify-content: center;
-align-items: center;    
+font-family: var(--font-title);   
 font-size: 2.6rem;
 }
 
