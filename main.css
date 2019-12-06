@@ -94,32 +94,65 @@ html {
     color: white;
 }
 
-#page-nav label, #hamburger {
+@media (min-width: 1300px) {
+.site-header .sidenav a {
     display: none;
 }
-
-@media (max-width: 1200px) {
-    #page-nav label {
-        display: inline-block;
-        color: #fff;
-        background: #a02620;
-        font-style: normal;
-        font-size: 1.2em;
-        padding: 10px;
-    }
-    #page-nav ul li {
-        display: block;
-    }
-    #page-nav ul {
-        display: none;
-    }
-    #page-nav input:checked~ul {
-        display: block;
-    }
-    .site-header .main-menu i {
-        display: none;
-    }
 }
+
+
+
+@media (max-width: 1300px) {
+
+    .site-header .main-menu {
+        display: none;
+    }
+
+
+  .site-header .sidenav a {
+    position: absolute; 
+    right: -80px; 
+    transition: 0.3s; 
+    padding: 15px; 
+    width: 120px; 
+    text-decoration: none; 
+    font-size: 20px; 
+    color: white; 
+    border-radius: 0 5px 5px 0;
+    z-index: 999; 
+  }
+  
+  .site-header .sidenav a:hover {
+    right: 0; 
+  }
+  
+  
+  #home {
+    top: 20px;
+    background-color: #4CAF50;
+  }
+  
+  #ourjob {
+    top: 80px;
+    background-color: #2196F3; 
+  }
+  
+  #functions {
+    top: 140px;
+    background-color: #f44336; 
+  }
+  
+  #about{
+    top: 200px;
+    background-color: #555 
+  }
+  #mail{
+    top: 260px;
+    background-color: rgb(148, 140, 23) 
+  }
+}   
+    
+    
 
 /* picture slideshow  */
 
