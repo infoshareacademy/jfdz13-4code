@@ -1,10 +1,8 @@
-*,
-    *::before,
-    *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 :root {
     --max-size: 1500px;
@@ -94,6 +92,33 @@ html {
     font-size: 25px;
     padding: 15px;
     color: white;
+}
+
+#page-nav label, #hamburger {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    #page-nav label {
+        display: inline-block;
+        color: #fff;
+        background: #a02620;
+        font-style: normal;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+    #page-nav ul li {
+        display: block;
+    }
+    #page-nav ul {
+        display: none;
+    }
+    #page-nav input:checked~ul {
+        display: block;
+    }
+    .site-header .main-menu i {
+        display: none;
+    }
 }
 
 /* picture slideshow  */
@@ -642,8 +667,7 @@ html {
     transition: opacity .5s;
 }
 
-.image-gallery a:hover i,
-.image-gallery a:hover::before {
+.image-gallery a:hover i, .image-gallery a:hover::before {
     opacity: 1;
 }
 
