@@ -50,7 +50,7 @@ html {
 }
 
 .site-header .logo {
-    max-width: 80px;
+    max-width: 100px;
     width: 100%;
     height: auto;
     align-content: center;
@@ -227,26 +227,21 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0  auto;
 }
-
-.about-us-title {
-    width: 100%;
-    margin: calc(var(--gutter) * 2);
-    padding: 30px;
-    text-align: center;
-    font-family: var(--font-title);
-    max-width: var(--max-size);
+.about-us-break-picture{
     height: 200px;
     margin: 0 auto;
-    background-image: url(images/istockphoto-959084682-1024x1024.jpg);
+    background-image: url(images/na_rowerzeNew.jpg);
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    max-width: var(--max-size);
+    width: 100%;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.6rem;
 }
-
 .about-us-main-box {
     display: flex;
     flex-wrap: wrap;
@@ -263,6 +258,17 @@ html {
     position: relative;
     display: block;
     margin: 40px 15px 100px 15px;
+}
+
+.about-us-title  {
+width:100%;
+margin: calc(var(--gutter) * 2);
+padding: 30px 10px 15px 10px;
+margin-bottom: 4rem;
+margin-top:2rem;
+text-align: center;
+font-family: var(--font-title);   
+font-size: 2.6rem;
 }
 
 .about-us-inner-box img {
