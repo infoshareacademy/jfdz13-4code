@@ -75,6 +75,7 @@ html {
     padding: 25px 10px;
 }
 
+
 .site-header .main-menu-item a {
     color: white;
     text-decoration: none;
@@ -93,52 +94,30 @@ html {
     color: white;
 }
 
-@media (min-width: 1300px) {
-    .site-header .sidenav a {
-        display: none;
-    }
+
+#page-nav label, #hamburger {
+    display: none;
 }
 
 @media (max-width: 1300px) {
-    .site-header .main-menu {
+    #page-nav label {
+        display: inline-block;
+        color: #fff;
+        font-style: normal;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+    #page-nav ul li {
+        display: block;
+    }
+    #page-nav ul {
         display: none;
     }
-    .site-header .sidenav {
-        padding-top: 40px;
+    #page-nav input:checked~ul {
+        display: block;
     }
-    .site-header .sidenav a {
-        position: absolute;
-        right: -80px;
-        transition: 0.3s;
-        padding: 15px;
-        width: 120px;
-        text-decoration: none;
-        font-size: 20px;
-        color: white;
-        border-radius: 0 5px 5px 0;
-    }
-    .site-header .sidenav a:hover {
-        right: 0;
-    }
-    #home {
-        top: 120px;
-        background-color: rgb(111, 187, 114);
-    }
-    #ourjob {
-        top: 180px;
-        background-color: rgb(105, 172, 228);
-    }
-    #functions {
-        top: 240px;
-        background-color: #d3bf89;
-    }
-    #about {
-        top: 300px;
-        background-color: rgb(158, 101, 101)
-    }
-    #mail {
-        top: 360px;
-        background-color: rgb(149, 141, 30)
+    .site-header .main-menu i {
+        display: none;
     }
 }
 
