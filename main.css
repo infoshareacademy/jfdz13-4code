@@ -87,6 +87,13 @@ html {
     font-size: 20px;
     text-transform: uppercase;
 }
+.site-header .main-menu li::before{
+    content: “fa fa-paw”;
+    font-family: “FontAwesome”;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    }
 
 .site-header .main-menu i {
     font-size: 25px;
