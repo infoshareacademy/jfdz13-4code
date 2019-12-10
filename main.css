@@ -17,7 +17,7 @@
     --color-red: #F66465;
     --color-dark-red: #AB3B3D;
     --color-dark-grey: rgb(67, 66, 71);
-    --color-grey: rgba(136, 117, 117, 0.65);
+    --color-grey: #887575a6;
 }
 
 /*smooth scroll*/
@@ -36,8 +36,7 @@ html {
 }
 
 .site-header .container {
-    background: var(--color-grey);
-    min-height: 40px;
+   
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -47,23 +46,32 @@ html {
     position: fixed;
     margin: auto;
     z-index: 1;
+    background: linear-gradient(180deg, rgba(98,86,86,1) 0%, rgba(136,117,117,0.6629026610644257) 56%, rgba(136,117,117,0.2595413165266106) 100%);
+    min-height: 80px;
+    font-family: var(--font-title);
 }
 
 .site-header .logo {
-    max-width: 100px;
-    width: 100%;
-    height: auto;
+    max-height: 80px;
+    height: 100%;
+    width: auto;
     align-content: center;
-    padding: 5px;
     margin-left: 20px;
+    padding: 5px;
 }
 
 .site-header .name {
-    max-width: 160px;
-    width: 100%;
-    height: auto;
+    max-height: 80px;
+    height: 100%;
+    width: auto;
     align-content: center;
-    padding-bottom: 10px;
+    padding: 5px;
+}
+
+@media (max-width: 500px){
+    .site-header .name{
+        display: none;
+    }
 }
 
 .site-header .main-menu {
@@ -71,7 +79,7 @@ html {
     align-content: right;
     flex-direction: row;
     list-style-type: none;
-    font-weight: 600;
+    font-weight: 400;
     padding-top: 16px;
 }
 
@@ -83,13 +91,11 @@ html {
     float: left;
     padding-top: 20px;
     transition: border-top-color 0.2s;
-    margin-right: 15px;
+    margin-right: 20px;
     font-size: 20px;
-    text-transform: uppercase;
 }
 .site-header .main-menu li::before{
     content: “fa fa-paw”;
-    font-family: “FontAwesome”;
     width: 10px;
     height: 10px;
     margin-right: 5px;
@@ -479,7 +485,6 @@ font-size: 2.6rem;
     position: relative;
     width: 100%;
     background-color: white;
-    margin-bottom: 30px;
 }
 
 .mainContainer {
@@ -507,30 +512,31 @@ font-size: 2.6rem;
 
 .content {
     width: 100%;
-    padding: var(--gutter);
-    padding: 3rem;
+    padding: 2rem;
     margin-bottom: 40px;
+    font-family: var(--font-text);
 }
 
 .content__header {
     margin: 0 0 var(--gutter);
-    font-size: 2.6rem;
+    font-size: var(--font-size-title);
+    font-family: var(--font-title);
     text-align: center;
 }
 
 .content__description {
-    color: darkgrey;
-    font-size: 1.2rem;
+    color: var(--color-dark-grey);
+    font-size: var(--font-size-text);
     margin-bottom: calc( var(--gutter) * 2);
 }
 
 .content__description-title {
-    font-size: 1.2rem;
-    font-family: 'Merriweather', serif;
-    margin-bottom: calc( var(--gutter) * 3);
+    font-size: var(--font-size-text);
+    font-family: var(--font-title);
+    margin-bottom: var(--gutter);
     text-align: center;
     font-style: italic;
-    color: #56555C;
+    color: var(--color-dark-grey);
 }
 
 @media (min-width: 300px) {
@@ -557,7 +563,7 @@ font-size: 2.6rem;
 @media (min-width: 1440px) {
     .heroImage {
         width: 50%;
-        height: 80vh;
+        height: 70vh;
         margin: 0;
         background-size: cover;
     }
@@ -620,6 +626,10 @@ font-size: 2.6rem;
     margin: 1rem auto;
     margin-bottom: 10rem;
     padding: 0 1.5rem;
+}
+
+.Gallerycontainer .content__description-title{
+    margin-bottom: 30px;
 }
 
 @media (min-width: 300px) {
@@ -743,7 +753,7 @@ font-size: 2.6rem;
     .section-action-gallery {
         text-transform: uppercase;
         font-weight: 500;
-        font-family: Raleway, sans-serif;
+        font-family: var(--font-text);
         font-size: 10px;
         height: 35px;
         box-sizing: border-box;
@@ -758,7 +768,7 @@ font-size: 2.6rem;
     .section-action-gallery  a{
         text-decoration: none;
         color: white;
-        font-family: Raleway, sans-serif;
+        font-family: var(--font-text);
     }
 
     .section-action-gallery:focus {
@@ -773,7 +783,7 @@ font-size: 2.6rem;
     .section-action-gallery {
         text-transform: uppercase;
         font-weight: 500;
-        font-family: Raleway, sans-serif;
+        font-family: var(--font-text);
         font-size: 15px;
         height: 45px;
         box-sizing: border-box;
@@ -790,7 +800,7 @@ font-size: 2.6rem;
     .section-action-gallery {
         text-transform: uppercase;
         font-weight: 500;
-        font-family: Raleway, sans-serif;
+        font-family: var(--font-text);
         font-size: 18px;
         height: 55px;
         box-sizing: border-box;
