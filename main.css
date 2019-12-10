@@ -17,7 +17,7 @@
     --color-red: #F66465;
     --color-dark-red: #AB3B3D;
     --color-dark-grey: rgb(67, 66, 71);
-    --color-grey: rgba(136, 117, 117, 0.65);
+    --color-grey: #887575a6;
 }
 
 /*smooth scroll*/
@@ -46,7 +46,7 @@ html {
     position: fixed;
     margin: auto;
     z-index: 1;
-    background: var(--color-grey);
+    background: linear-gradient(180deg, rgba(98,86,86,1) 0%, rgba(136,117,117,0.6629026610644257) 56%, rgba(136,117,117,0.2595413165266106) 100%);
     min-height: 80px;
     font-family: var(--font-title);
 }
