@@ -49,6 +49,8 @@ html {
     background: linear-gradient(180deg, rgba(98,86,86,1) 0%, rgba(136,117,117,0.6629026610644257) 56%, rgba(136,117,117,0.2595413165266106) 100%);
     min-height: 80px;
     font-family: var(--font-title);
+ 
+
 }
 
 .site-header .logo {
@@ -119,8 +121,8 @@ html {
         color: #fff;
         font-style: normal;
         font-size: 1.2em;
-        padding: 30px;
-        padding-right: 60px;
+        padding-top: 20px;
+        padding-right: 40px;
         font-size: x-large;
     }
     #page-nav ul li {
@@ -135,21 +137,33 @@ html {
         text-decoration: none;
         display: block;
         float: left;
-        padding-top: 20px;
         transition: border-top-color 0.2s;
         margin-right: 15px;
         font-size: 20px;
         text-transform: uppercase;
-        margin-bottom: 15px;
     }
+/*
+    #page-nav input:checked +label {
+        display: none;
+    }
+   
+    #page-nav input:checked ~.site-logo {
+        display: none;
+    }
+    */
     
-    
+
+
     #page-nav input:checked~ul {
         display: block;
+
     }
     .site-header .main-menu i {
         display: none;
     }
+    
+
+    
 }
 
 /* picture slideshow  */
