@@ -25,3 +25,28 @@
     init();
     checkPosition();
 })();
+
+let mainMenu = document.querySelectorAll(".main-menu-item");
+
+
+
+mainMenu.addEventListener("click", () => {
+setTimeout(() => {
+    mainMenu.style.display = "none";
+}, 1000);
+});
+/*
+document.addEventListener("click", function(){
+    document.getElementById("demo").innerHTML = "Hello World";
+  });
+  */
+
+/*
+startButton.addEventListener('click', () => {
+    const helloSection = document.querySelector('.hello-section');
+    helloSection.style.display = 'none';
+    intervalId = setInterval(() => {
+        addNewBox();
+    }, 1500);
+});
+*/
