@@ -56,14 +56,13 @@
                 </nav>
             </div>
         </div>
-        <div class="site-hero">
-            <div class="fling-minislide">
-                <img src="images/zdj1.jpg" alt="Slide 4" />
-                <img src="images/zdj2.jpg" alt="Slide 3" />
-                <img src="images/zdj3.jpg" alt="Slide 2" />
-                <img src="images/zdj4.jpg" alt="Slide 1" />
+        <header class=header>
+            <p class="header__welcome">Witajcie!</p>
+            <img class=header__image src="images/tlo.png" alt="zwierzaki">
+            <div class="header__content">
+                <p></p>
             </div>
-        </div>
+        </header>
         <div class="mainContainer" id="onas">
             <div class="description">
                 <h1 class="content__header"> Co robimy z pasją?</h1>
@@ -98,61 +97,68 @@
                 </div>
             </main>
         </div>
-
-        <div class="break-container">
+        <div class="break-container__before">
+            <div class="break-container">
+            </div>
         </div>
         <div class="func" id="func"></div>
-        <div class="functions" id="funkcje">
-            <div class="functions__container">
-                <div class="functions__small-container">
-                    <div class="functions-content hidden">
-                        <div class="functions-content__image">
-                            <img src="images/doghouse.png" alt="doghouse" />
+        <div class="before__functions">
+            <div class="functions" id="funkcje">
+                <div class="functions__container">
+                    <div class="functions__small-container">
+                        <div class="functions-content hidden">
+                            <div class="functions-content__image">
+                                <img src="images/doghouse.png" alt="doghouse" />
+                            </div>
+                            <div class="functions-content__text functions-text">
+                                <h3 class="functions-text__title">Adopcja</h3>
+                                <p class="functions-text__description">Marzysz o powiększeniu rodziny o wiernego
+                                    przyjaciela? W
+                                    naszej aplikacji znajdziesz formularz. Wypełnij go, a skontaktujemy się z Tobą, aby
+                                    przeprowadzić Cię przez proces adopcyjny.</p>
+                            </div>
                         </div>
-                        <div class="functions-content__text functions-text">
-                            <h3 class="functions-text__title">Adopcja</h3>
-                            <p class="functions-text__description">Marzysz o powiększeniu rodziny o wiernego
-                                przyjaciela? W
-                                naszej aplikacji znajdziesz formularz. Wypełnij go, a skontaktujemy się z Tobą, aby
-                                przeprowadzić Cię przez proces adopcyjny.</p>
-                        </div>
-                    </div>
-                    <div class="functions-content hidden">
-                        <div class="functions-content__image">
-                            <img src="images/veterinary.png" alt="behavior-help" />
-                        </div>
-                        <div class="functions-content__text functions-text">
-                            <h3 class="functions-text__title">Porady behawiorysty</h3>
-                            <p class="functions-text__description">Masz problem z zachowaniem się Twojego pupila i nie
-                                wiesz, jak go rozwiązać. Skontaktuj się z naszym behawiorystą. Zawsze chętnie Ci pomoże.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="functions__small-container">
-                    <div class="functions-content hidden">
-                        <div class="functions-content__image">
-                            <img src="images/walkingthedog.png" alt="walking dogs">
-                        </div>
-                        <div class="functions-content__text functions-text">
-                            <h3 class="functions-text__title">Wolontariat</h3>
-                            <p class="functions-text__description">Chcesz nam pomóc? Rąk do pracy nigdy za wiele, a
-                                łebków
-                                do wygłaskania całkiem sporo. Nasi podopieczni na pewno należycie się odwdzięczą. Zgłoś
-                                się
-                                przez aplikację.</p>
+                        <div class="functions-content hidden">
+                            <div class="functions-content__image">
+                                <img src="images/veterinary.png" alt="behavior-help" />
+                            </div>
+                            <div class="functions-content__text functions-text">
+                                <h3 class="functions-text__title">Porady behawiorysty</h3>
+                                <p class="functions-text__description">Masz problem z zachowaniem się Twojego pupila i
+                                    nie
+                                    wiesz, jak go rozwiązać. Skontaktuj się z naszym behawiorystą. Zawsze chętnie Ci
+                                    pomoże.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="functions-content hidden">
-                        <div class="functions-content__image">
-                            <img src="images/donation.png" alt="donation">
+                    <div class="functions__small-container">
+                        <div class="functions-content hidden">
+                            <div class="functions-content__image">
+                                <img src="images/walkingthedog.png" alt="walking dogs">
+                            </div>
+                            <div class="functions-content__text functions-text">
+                                <h3 class="functions-text__title">Wolontariat</h3>
+                                <p class="functions-text__description">Chcesz nam pomóc? Rąk do pracy nigdy za wiele, a
+                                    łebków
+                                    do wygłaskania całkiem sporo. Nasi podopieczni na pewno należycie się odwdzięczą.
+                                    Zgłoś
+                                    się
+                                    przez aplikację.</p>
+                            </div>
                         </div>
-                        <div class="functions-content__text functions-text">
-                            <h3 class="functions-text__title">Wesprzyj nas</h3>
-                            <p class="functions-text__description">Jesteśmy wdzięczni za pomoc w każdej postaci,
-                                finansowej
-                                lub rzeczowej. Na bieżąco zamieszczamy listę rzeczy, których pilnie potrzebujemy. Masz
-                                również możliwość wirtualnej adopcji konkretnego zwierzaka.</p>
+                        <div class="functions-content hidden">
+                            <div class="functions-content__image">
+                                <img src="images/donation.png" alt="donation">
+                            </div>
+                            <div class="functions-content__text functions-text">
+                                <h3 class="functions-text__title">Wesprzyj nas</h3>
+                                <p class="functions-text__description">Jesteśmy wdzięczni za pomoc w każdej postaci,
+                                    finansowej
+                                    lub rzeczowej. Na bieżąco zamieszczamy listę rzeczy, których pilnie potrzebujemy.
+                                    Masz
+                                    również możliwość wirtualnej adopcji konkretnego zwierzaka.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -382,6 +388,7 @@
         </footer>
 
         <script src="scroll.js"></script>
+        <script src="main.js"></script>
 </body>
 
 </html>
