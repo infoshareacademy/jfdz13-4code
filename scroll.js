@@ -26,6 +26,7 @@
     checkPosition();
 })();
 
+/*
 let mainMenu = document.querySelectorAll(".main-menu-item");
 
 
@@ -48,5 +49,38 @@ startButton.addEventListener('click', () => {
     intervalId = setInterval(() => {
         addNewBox();
     }, 1500);
+});
+*/
+/*
+const mainMenu = document.getElementsByClassName("main-menu-item ");
+const newMainMenuColor = "black";
+const oldMainMenuColor = "white";
+
+
+
+window.addEventListener('click', (event) =>  {
+   if ((event.code === 'click') && (mainMenu.style.color === oldMainMenuColor)) {
+  mainMenu.style.color = newMainMenuColor;
+  */
+  /*
+} else if ((event.code === 'click') && (background.style.backgroundColor === newBackgroundColor)) {
+    background.style.backgroundColor = oldBackgroundColor;
+}*/
+
+   /*
+});
+
+const background = document.querySelector('.world');
+const oldBackgroundColor = 'cadetblue';
+const newBackgroundColor = 'green';
+
+background.style.backgroundColor = oldBackgroundColor;
+
+window.addEventListener("keyup", (event) => {
+    if ((event.code === 'Space') && (background.style.backgroundColor === oldBackgroundColor)) {
+        background.style.backgroundColor = newBackgroundColor;
+    } else if ((event.code === 'Space') && (background.style.backgroundColor === newBackgroundColor)) {
+        background.style.backgroundColor = oldBackgroundColor;
+    }
 });
 */

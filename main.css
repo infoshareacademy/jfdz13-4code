@@ -93,6 +93,12 @@ html {
     font-size: 20px;
 }
 
+.site-header .main-menu-item a:hover{
+    color: black;
+   
+}
+
+
 .site-header .main-menu li::before {
     content: “fa fa-paw”;
     width: 10px;
@@ -133,7 +139,7 @@ html {
     #page-nav ul {
         display: none;
     }
-    .site-header .main-menu-item a {
+    .site-header .main-menu-item a{
         color: white;
         text-decoration: none;
         display: block;
@@ -142,8 +148,9 @@ html {
         margin-right: 15px;
         font-size: 20px;
         text-transform: uppercase;
-        padding-top: 10px;
+        padding-top: 5px;
         margin-top: 0;
+
     }
     #page-nav input:checked~ul {
         display: block;
@@ -266,7 +273,7 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto;
+    margin: 100px auto 0 auto;
 }
 
 .about-us-break-picture {
@@ -307,12 +314,13 @@ html {
     margin: 40px 15px 100px 15px;
 }
 
+
 .about-us-title {
     width: 100%;
     margin: calc(var(--gutter) * 2);
     padding: 30px 10px 15px 10px;
-    margin-bottom: 4rem;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
     text-align: center;
     font-family: var(--font-title);
     font-size: 2.6rem;
@@ -428,12 +436,11 @@ html {
     background-color: white;
     justify-content: center;
     align-items: center;
-    margin: 100px auto 100px auto;
+    margin: 80px auto 0 auto;
 }
 
 .functions__container {
     display: flex;
-    /*KKKKmargin: calc(var(--gutter) * 2);*/
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -441,7 +448,7 @@ html {
     width: 100%;
     margin: calc(var(--gutter) * 2);
     padding: 30px 10px 15px 10px;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     margin-top: 2rem;
     text-align: center;
     font-family: var(--font-title);
@@ -526,9 +533,9 @@ html {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 10rem 1rem 1rem 1rem;
     background-color: white;
-    margin-top: 40px;
+    margin: 100px auto 100px auto;
   
 }
 
@@ -659,10 +666,12 @@ html {
 
 .Gallerycontainer {
     width: 100%;
-    height: auto;
-    margin: 1rem auto;
-    margin-bottom: 10rem;
-    padding: 0 1.5rem;
+    margin: 0 auto 100px auto;
+    padding: 10rem 1.5rem 1.5rem 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+ 
+    
 }
 
 .Gallerycontainer .content__description-title {
@@ -859,7 +868,7 @@ html {
     display: flex;
     max-width: var(--max-size);
     width: 100%;
-    margin: 50px auto 0 auto;
+    margin: 0 auto 0 auto;
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
 }
@@ -895,6 +904,7 @@ html {
     margin-bottom: calc(var(--gutter) * 3);
     max-width: 800px;
     width: 100%;
+    margin: 130px auto 100px auto;
 }
 
 .newsletter__title {
