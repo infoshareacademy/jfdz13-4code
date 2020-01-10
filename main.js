@@ -1,15 +1,34 @@
-const header = document.querySelector(".header")
-const headerImage = document.querySelector(".header__image")
-const headerWelcome = document.querySelector(".header__welcome")
-const headerContent = document.querySelector(".header__content")
+const paragraphIds = ['slide1', 'slide2', 'slide3', 'slide4'];
+let activeSlider = 0;
+let intervalHandle = null;
 
-setTimeout(() => {
-    header.style.height = "50vh";
-}, 6000);
+function slideTimer() {
+    activeSlider = (activeSlider + 1) % 4;
 
-setTimeout(() => {
-    headerWelcome.style.height = "0"
-    headerImage.style.height = "0"
-    headerContent.style.height = "50vh"
-    headerContent.style.opacity = "1"
-}, 13000);
+    changeActiveSlider(activeSlider);
+}
+
+function changeActiveSlider(sliderIdx) {
+    let className = "slide" + (sliderIdx + 1);
+    paragraphIds.forEach(paragraph => {
+        if (paragraph === className) {
+            document.getElementById(paragraph).style.opacity = 1;
+            document.querySelector(".radio." + paragraph).classList.add("radio--active");
+        } else {
+            document.getElementById(paragraph).style.opacity = 0;
+            document.querySelector(".radio." + paragraph).classList.remove("radio--active");
+        }
+    });
+
+    activeSlider = sliderIdx;
+}
+
+function radioClicked(sliderIdx) {
+    changeActiveSlider(sliderIdx);
+
+    if (intervalHandle !== null) {
+        clearInterval(intervalHandle);
+    }
+    intervalHandle = setInterval(slideTimer, 5000);
+}
+

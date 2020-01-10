@@ -57,11 +57,26 @@
             </div>
         </div>
         <header class=header>
-            <p class="header__welcome">Witajcie!</p>
-            <img class=header__image src="images/tlo.png" alt="zwierzaki">
-            <div class="header__content">
-                <p></p>
-            </div>
+                <div class="slider">
+                    <div class="slide one" id="slide1">
+                        <p>Witajcie na stronie fundacji<br>4code for animals</p>
+                    </div>
+                    <div class="slide two" id="slide2">
+                        <p>Kochamy zwierzęta i działamy aktywnie w celu polepszenia ich życia</p>
+                    </div>
+                    <div class="slide three" id="slide3">
+                        <p>Jesteśmy otwarci na każdą formę pomocy z Twojej strony</p>
+                    </div>
+                        <div class="slide four" id="slide4">
+                        <p>Ratując jednego psa nie zmienisz świata, ale cały świat zmieni się dla tego jednego psa!</p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div onclick="radioClicked(0)" class="radio slide1 radio--active"></div>
+                    <div onclick="radioClicked(1)" class="radio slide2"></div>
+                    <div onclick="radioClicked(2)" class="radio slide3"></div>
+                    <div onclick="radioClicked(3)" class="radio slide4"></div>
+                </div>
         </header>
         <div class="mainContainer" id="onas">
             <div class="description">
@@ -389,6 +404,10 @@
 
         <script src="scroll.js"></script>
         <script src="main.js"></script>
+        <script>
+                intervalHandle = setInterval(slideTimer, 5000);
+                </script>
+                
 </body>
 
 </html>

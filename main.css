@@ -148,84 +148,97 @@ html {
 }
 
 .header {
+    height: 70vh;
+}
+
+.slider {
+    width: 100%;
+    height: 70vh;
     position: relative;
-    max-width: 2000px;
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-    transition: all 5.5s linear;
 }
 
-.header__welcome {
-    position: absolute;
-    color: black;
-    font-size: 100px;
-    font-family: var(--font-title);
-    top: 50%;
-    opacity: 0;
+.slide {
+    transition: all 500ms;
     width: 100%;
-    text-align: center;
-    animation: welcome 3s ease-in-out;
-    z-index: -1;
-}
-
-@keyframes welcome {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50%{
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-}
-
-.header__image {
-    position: absolute;
-    max-width: 2000px;
-    top: -1600px;
-    width: 100%;
-    height: auto;
+    height: 70vh;
     background-size: cover;
-    animation: slide 12s linear;
-    animation-delay: 1s;
-    opacity: 0;
-    transition: all;
-    z-index: -1;
+    background-position: center;
+    position: absolute;
 }
 
-@keyframes slide {
-    0% {
-        opacity: 0;
-        transform: translateY(1600px)
-    }
-    15% {
-        opacity: 0.5;
-    }
-    25% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.header__content{
-    background-image: url(images/header.png);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    width: auto;
+.slide p {
+    width: 65%;
     margin: 0 auto;
-    height: 0;
-    opacity: 0;
-    transition: opacity 1s;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 80%;
+    transform:translate(-50%, -80%); 
+    padding: 20px;
+    font-family: var(--font-title);
+    font-size: var(--font-size-title);
+    letter-spacing: 0.1em;
+    color: #ffffffd3;
+    text-shadow: var(--color-dark-grey) 2px 1px 4px;
 }
+
+.slide.one p {
+    font-size: 72px;
+    text-transform: uppercase;
+}
+
+.slide.one {
+    opacity: 1;
+    background-image: url(images/head1.jpg);
+}
+
+.slide.two {
+    opacity: 0;
+    background-image: url(images/head2.jpg);
+}
+
+.slide.three {
+    opacity: 0;
+    background-image: url(images/head3.jpg);
+}
+
+.slide.four {
+    opacity: 0;
+    background-image: url(images/head4.jpg);
+}
+
+.controls {
+    display: flex;
+    width: 100px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -65%);
+}
+
+.radio {
+    height: 10px;
+    width: 10px;
+    background: #ffffff8a;
+    border: solid 1px grey;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.radio--active {
+    background: var(--color-dark-grey);
+}
+
+.radio:hover {
+    background: grey;
+}
+
 
 .about-us {
     display: flex;
