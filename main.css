@@ -79,7 +79,7 @@ html {
     flex-direction: row;
     list-style-type: none;
     font-weight: 400;
-    padding-top: 16px;
+    padding-top: 10px;
 }
 
 .site-header .main-menu-item a {
@@ -91,6 +91,11 @@ html {
     transition: border-top-color 0.2s;
     margin-right: 20px;
     font-size: 20px;
+}
+
+.main-menu-hidden {
+
+ display: none;
 }
 
 .site-header .main-menu-item a:hover{
@@ -533,7 +538,7 @@ html {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10rem 1rem 1rem 1rem;
+    padding: rem 1rem 1rem 1rem;
     background-color: white;
     margin: 100px auto 100px auto;
   
@@ -561,10 +566,13 @@ html {
 }
 
 .content__header {
-    margin: 0 0 var(--gutter);
-    font-size: var(--font-size-title);
-    font-family: var(--font-title);
+    margin: calc(var(--gutter) * 2);
+    padding: 30px 10px 15px 10px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     text-align: center;
+    font-family: var(--font-title);
+    font-size: 2.6rem;
 }
 
 .content__description {
@@ -578,7 +586,6 @@ html {
     font-family: var(--font-title);
     margin-bottom: var(--gutter);
     text-align: center;
-    font-style: italic;
     color: var(--color-dark-grey);
     width:100%;
 }
@@ -667,7 +674,7 @@ html {
 .Gallerycontainer {
     width: 100%;
     margin: 0 auto 100px auto;
-    padding: 10rem 1.5rem 1.5rem 1.5rem;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
  

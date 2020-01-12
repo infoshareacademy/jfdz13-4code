@@ -26,61 +26,52 @@
     checkPosition();
 })();
 
-/*
-let mainMenu = document.querySelectorAll(".main-menu-item");
 
+const home = document.querySelector(".main-menu-item a");
+const hamburger = document.querySelector("#page-nav label");
+console.log(hamburger);
+const menu = document.querySelectorAll(".main-menu-item a");
+//const hiddenMenu = menu.classList.add('main-menu-hidden');
+//console.log(hiddenMenu);
+console.log(menu);
 
-
-mainMenu.addEventListener("click", () => {
-setTimeout(() => {
-    mainMenu.style.display = "none";
-}, 1000);
+home.addEventListener("click", function () {
+    setTimeout(() => {
+        hamburger.style.display = 'block';
+        menu.style.display = 'none';
+    }, 2000);
 });
 /*
-document.addEventListener("click", function(){
-    document.getElementById("demo").innerHTML = "Hello World";
-  });
-  */
+const input = document.querySelector('.subscribe__input');
+input.setAttribute('type', 'email');
 
-/*
-startButton.addEventListener('click', () => {
-    const helloSection = document.querySelector('.hello-section');
-    helloSection.style.display = 'none';
-    intervalId = setInterval(() => {
-        addNewBox();
-    }, 1500);
-});
-*/
-/*
-const mainMenu = document.getElementsByClassName("main-menu-item ");
-const newMainMenuColor = "black";
-const oldMainMenuColor = "white";
+const subscribeButton = document.querySelector('.subscribe__button');
 
 
 
-window.addEventListener('click', (event) =>  {
-   if ((event.code === 'click') && (mainMenu.style.color === oldMainMenuColor)) {
-  mainMenu.style.color = newMainMenuColor;
-  */
-  /*
-} else if ((event.code === 'click') && (background.style.backgroundColor === newBackgroundColor)) {
-    background.style.backgroundColor = oldBackgroundColor;
-}*/
+const checkIfContains = () => {
+    if (input.indexOf('@') > -1) {
+        input.display = 'none';
+    } else {
+        input.display = 'none';
+    }
+};
 
-   /*
-});
 
-const background = document.querySelector('.world');
-const oldBackgroundColor = 'cadetblue';
-const newBackgroundColor = 'green';
 
-background.style.backgroundColor = oldBackgroundColor;
-
-window.addEventListener("keyup", (event) => {
-    if ((event.code === 'Space') && (background.style.backgroundColor === oldBackgroundColor)) {
-        background.style.backgroundColor = newBackgroundColor;
-    } else if ((event.code === 'Space') && (background.style.backgroundColor === newBackgroundColor)) {
-        background.style.backgroundColor = oldBackgroundColor;
+subscribeButton.addEventListener('click', (event) => {
+    if (checkIfContains === true) {
+        alert('Dziękujemy')
+    } else {
+        alert('Nieprawidłowy adres email');
     }
 });
+
 */
+
+
+
+/*
+
+*/
+const header = document.querySelectorAll('h1');
