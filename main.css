@@ -92,11 +92,12 @@ html {
     margin-right: 20px;
     font-size: 20px;
 }
-
+/*
 .main-menu-hidden {
 
  display: none;
 }
+*/
 
 .site-header .main-menu-item a:hover{
     color: black;
@@ -128,7 +129,6 @@ html {
     }
 }
 
-@media (max-width: 1300px) {
     #page-nav label {
         display: inline-block;
         color: #fff;
@@ -157,6 +157,7 @@ html {
         margin-top: 0;
 
     }
+    /*
     #page-nav input:checked~ul {
         display: block;
     }
@@ -169,7 +170,7 @@ html {
     #page-nav input:checked~ul {
         display: block;
     }
-}
+*/
 
 @media (max-width: 900px) {
     .site-header .main-menu-item a {
