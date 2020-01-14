@@ -33,8 +33,7 @@
 
 
                 <nav id="page-nav">
-                    <input type="checkbox" id="hamburger" />
-                    <label for="hamburger">&#9776;</label>
+                    <i class="fa fa-bars"></i>
                     <ul class="main-menu">
                         <li class="main-menu-item">
                             <a href="#">Home</a>
@@ -49,40 +48,37 @@
                             <a href="#gallery">Galeria</a>
                         </li>
                         <li class="main-menu-item">
-                                <a href="#galeria">Galeria</a>
-                            </li>
-                        <li class="main-menu-item">
                             <a href="#about_us">O Nas</a>
                         </li>
                         <li class="main-menu-item">
                             <a href="#newsletter">Newsletter</a>
                         </li>
                     </ul>
-
                 </nav>
+
             </div>
         </div>
         <header class=header>
-                <div class="slider">
-                    <div class="slide one" id="slide1">
-                        <p>Witajcie na stronie fundacji<br>4code for animals</p>
-                    </div>
-                    <div class="slide two" id="slide2">
-                        <p>Kochamy zwierzęta i działamy aktywnie w celu polepszenia ich życia</p>
-                    </div>
-                    <div class="slide three" id="slide3">
-                        <p>Jesteśmy otwarci na każdą formę pomocy z Twojej strony</p>
-                    </div>
-                        <div class="slide four" id="slide4">
-                        <p>Ratując jednego psa nie zmienisz świata, ale cały świat zmieni się dla tego jednego psa!</p>
-                    </div>
+            <div class="slider">
+                <div class="slide one" id="slide1">
+                    <p>Witajcie na stronie fundacji<br>4code for animals</p>
                 </div>
-                <div class="controls">
-                    <div onclick="radioClicked(0)" class="radio slide1 radio--active"></div>
-                    <div onclick="radioClicked(1)" class="radio slide2"></div>
-                    <div onclick="radioClicked(2)" class="radio slide3"></div>
-                    <div onclick="radioClicked(3)" class="radio slide4"></div>
+                <div class="slide two" id="slide2">
+                    <p>Kochamy zwierzęta i działamy aktywnie w celu polepszenia ich życia</p>
                 </div>
+                <div class="slide three" id="slide3">
+                    <p>Jesteśmy otwarci na każdą formę pomocy z Twojej strony</p>
+                </div>
+                <div class="slide four" id="slide4">
+                    <p>Ratując jednego psa nie zmienisz świata, ale cały świat zmieni się dla tego jednego psa!</p>
+                </div>
+            </div>
+            <div class="controls">
+                <div onclick="radioClicked(0)" class="radio slide1 radio--active"></div>
+                <div onclick="radioClicked(1)" class="radio slide2"></div>
+                <div onclick="radioClicked(2)" class="radio slide3"></div>
+                <div onclick="radioClicked(3)" class="radio slide4"></div>
+            </div>
         </header>
         <nav class="smallNav">
             <a href="#onas"><img class="smallNav__image" src="images/down-arrow.png" alt="arrow"></a>
@@ -90,7 +86,7 @@
         <div class="mainContainer" id="onas">
             <div class="description">
                 <h1 class="content__header"> Co robimy z pasją?</h1>
-                </div>
+            </div>
 
             <div class="heroImage"></div>
             <main class="content">
@@ -106,7 +102,7 @@
                     pies ma szansę otworzyć się- wówczas łatwiej znaleźć dla niego odpowiednich i kochających opiekunów.
                 </p>
                 <p class="content__description">Możesz adoptować psa będącego pod naszą opieką, możesz zostać
-                        wolontariuszem, możesz zostać darczyńcą, możesz… sam zdecyduj co możesz..</strong></p>
+                    wolontariuszem, możesz zostać darczyńcą, możesz… sam zdecyduj co możesz..</strong></p>
                 <div class="centerize">
                     <button class="section-action-gallery">
                         <a href="#newsletter">Przyłącz się do nas</a>
@@ -114,78 +110,79 @@
                 </div>
             </main>
         </div>
-            <div class="break-container" >
-            </div>
+        <div class="break-container">
+        </div>
         </div>
         <div class="functions__title" id="func">
             <h2>Aplikacja</h2>
-            <p>Nasza fundacja idąc z duchem czasu wkrótce udostępni aplikację, dzięki której jeszcze łatwiej będziemy mogli wspólnie pomagać. Oto kilka z zaplanowanych funkcji produktu.</p>
+            <p>Nasza fundacja idąc z duchem czasu wkrótce udostępni aplikację, dzięki której jeszcze łatwiej będziemy
+                mogli wspólnie pomagać. Oto kilka z zaplanowanych funkcji produktu.</p>
         </div>
-            <div class="functions" id="funkcje">
-                <div class="functions__container">
-                    <div class="functions__small-container">
-                        <div class="functions-content hidden">
-                            <div class="functions-content__image">
-                                <img src="images/doghouse.png" alt="doghouse" />
-                            </div>
-                            <div class="functions-content__text functions-text">
-                                <h3 class="functions-text__title">Adopcja</h3>
-                                <p class="functions-text__description">Marzysz o powiększeniu rodziny o wiernego
-                                    przyjaciela? W
-                                    naszej aplikacji znajdziesz formularz. Wypełnij go, a skontaktujemy się z Tobą, aby
-                                    przeprowadzić Cię przez proces adopcyjny.</p>
-                            </div>
+        <div class="functions" id="funkcje">
+            <div class="functions__container">
+                <div class="functions__small-container">
+                    <div class="functions-content hidden">
+                        <div class="functions-content__image">
+                            <img src="images/doghouse.png" alt="doghouse" />
                         </div>
-                        <div class="functions-content hidden">
-                            <div class="functions-content__image">
-                                <img src="images/veterinary.png" alt="behavior-help" />
-                            </div>
-                            <div class="functions-content__text functions-text">
-                                <h3 class="functions-text__title">Porady behawiorysty</h3>
-                                <p class="functions-text__description">Masz problem z zachowaniem się Twojego pupila i
-                                    nie
-                                    wiesz, jak go rozwiązać. Skontaktuj się z naszym behawiorystą. Zawsze chętnie Ci
-                                    pomoże.
-                                </p>
-                            </div>
+                        <div class="functions-content__text functions-text">
+                            <h3 class="functions-text__title">Adopcja</h3>
+                            <p class="functions-text__description">Marzysz o powiększeniu rodziny o wiernego
+                                przyjaciela? W
+                                naszej aplikacji znajdziesz formularz. Wypełnij go, a skontaktujemy się z Tobą, aby
+                                przeprowadzić Cię przez proces adopcyjny.</p>
                         </div>
                     </div>
-                    <div class="functions__small-container">
-                        <div class="functions-content hidden">
-                            <div class="functions-content__image">
-                                <img src="images/walkingthedog.png" alt="walking dogs">
-                            </div>
-                            <div class="functions-content__text functions-text">
-                                <h3 class="functions-text__title">Wolontariat</h3>
-                                <p class="functions-text__description">Chcesz nam pomóc? Rąk do pracy nigdy za wiele, a
-                                    łebków
-                                    do wygłaskania całkiem sporo. Nasi podopieczni na pewno należycie się odwdzięczą.
-                                    Zgłoś
-                                    się
-                                    przez aplikację.</p>
-                            </div>
+                    <div class="functions-content hidden">
+                        <div class="functions-content__image">
+                            <img src="images/veterinary.png" alt="behavior-help" />
                         </div>
-                        <div class="functions-content hidden">
-                            <div class="functions-content__image">
-                                <img src="images/donation.png" alt="donation">
-                            </div>
-                            <div class="functions-content__text functions-text">
-                                <h3 class="functions-text__title">Wesprzyj nas</h3>
-                                <p class="functions-text__description">Jesteśmy wdzięczni za pomoc w każdej postaci,
-                                    finansowej
-                                    lub rzeczowej. Na bieżąco zamieszczamy listę rzeczy, których pilnie potrzebujemy.
-                                    Masz
-                                    również możliwość wirtualnej adopcji konkretnego zwierzaka.</p>
-                            </div>
+                        <div class="functions-content__text functions-text">
+                            <h3 class="functions-text__title">Porady behawiorysty</h3>
+                            <p class="functions-text__description">Masz problem z zachowaniem się Twojego pupila i
+                                nie
+                                wiesz, jak go rozwiązać. Skontaktuj się z naszym behawiorystą. Zawsze chętnie Ci
+                                pomoże.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="functions__small-container">
+                    <div class="functions-content hidden">
+                        <div class="functions-content__image">
+                            <img src="images/walkingthedog.png" alt="walking dogs">
+                        </div>
+                        <div class="functions-content__text functions-text">
+                            <h3 class="functions-text__title">Wolontariat</h3>
+                            <p class="functions-text__description">Chcesz nam pomóc? Rąk do pracy nigdy za wiele, a
+                                łebków
+                                do wygłaskania całkiem sporo. Nasi podopieczni na pewno należycie się odwdzięczą.
+                                Zgłoś
+                                się
+                                przez aplikację.</p>
+                        </div>
+                    </div>
+                    <div class="functions-content hidden">
+                        <div class="functions-content__image">
+                            <img src="images/donation.png" alt="donation">
+                        </div>
+                        <div class="functions-content__text functions-text">
+                            <h3 class="functions-text__title">Wesprzyj nas</h3>
+                            <p class="functions-text__description">Jesteśmy wdzięczni za pomoc w każdej postaci,
+                                finansowej
+                                lub rzeczowej. Na bieżąco zamieszczamy listę rzeczy, których pilnie potrzebujemy.
+                                Masz
+                                również możliwość wirtualnej adopcji konkretnego zwierzaka.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
         <div class="Gallerycontainer" id="gallery">
             <div class="description">
                 <h1 class="content__header"> Kim są nasi podopieczni?</h1>
-            
+
             </div>
             <div class="image-gallery">
                 <a href="images/zdj11.jpg" class="img-1">
@@ -367,19 +364,20 @@
                 <p class="newsletter__text">Zapisz się na nasz newsletter. Raz w tygodniu wysyłamy komplet
                     informacji, co działo się u naszych podopiecznych i jakie wydarzenia planujemy w najbliższym czasie.
                     Nagrodą przy zapisie jest dostęp do darmowej gry.</p>
-                <div class="newsletter__subscribe subscribe">
-                    <form>
+                <form>
+                    <div class="newsletter__subscribe subscribe">
                         <input class="subscribe__input" type="email" placeholder="Twój email" required>
-                    <div class="subscribe-button__animation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <button class="subscribe__button" type="submit">Zapisz się</button>
-                    </div> 
-                    </form>
-                                           
-                </div>
+                        <div class="subscribe-button__animation">
+                            <span></span>   
+                            <span></span>
+                            <span></span>
+                            <button class="subscribe__button" type="submit">Zapisz się</button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
+        </div>
         </div>
         <footer class="footer">
             <div class="footer__content">
@@ -403,10 +401,11 @@
 
         <script src="scroll.js"></script>
         <script src="main.js"></script>
+        <script src="nav.js"></script>
         <script>
-                intervalHandle = setInterval(slideTimer, 5000);
-                </script>
-                
+            intervalHandle = setInterval(slideTimer, 5000);
+        </script>
+
 </body>
 
 </html>
