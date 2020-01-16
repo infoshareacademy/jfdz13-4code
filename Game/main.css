@@ -51,7 +51,7 @@
     position: absolute;
     /* right: 0;
     bottom: 0; */
-    animation: falling 4s infinite linear;
+    animation: falling 5s infinite linear;
 }
 
 @keyframes falling {

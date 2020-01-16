@@ -71,38 +71,38 @@ window.addEventListener('keydown', event => {
 
 
 
-function getRandom(maxSize) {
-    return parseInt(Math.random() * maxSize);
-  }
+// function getRandom(maxSize) {
+//     return parseInt(Math.random() * 1000);
+//   }
 
-  function createSprite(element, x, y, w, h) {
-    let result = new Object();
-    result.element = element;
-    result.x = x;
-    result.y = y;
-    result.w = w;
-    result.h = h;
-    return result;
-  }
+//   function createSprite(element, x, y, w, h) {
+//     let result = new Object();
+//     result.element = element;
+//     result.x = x;
+//     result.y = y;
+//     result.w = w;
+//     result.h = h;
+//     return result;
+//   }
   
 
-function addfallingCat() {
+// function addfallingCat() {
     
-        let elementName = 'fallingCat' + getRandom(10000000);
-        let fallingCat = createSprite(elementName, getRandom(450), -40, 35, 35);
+//         let elementName = 'fallingCat' + getRandom(10000000);
+//         let fallingCat = createSprite(elementName, getRandom(450), -40, 35, 35);
 
-        let element = document.createElement('div');
-        element.id = fallingCat.element;
-        element.className = 'fallingCat';
-        document.children[0].appendChild(element);
+//         let element = document.createElement('div');
+//         element.id = fallingCat.element;
+//         element.className = 'fallingCat';
+//         document.children[0].appendChild(element);
 
         
-    };
+//     };
 
 
-setInterval(() => {
-    addfallingCat();
-}, 5000);
+// setInterval(() => {
+//     addfallingCat();
+// }, 5000);
 
 
 
