@@ -65,68 +65,65 @@ window.addEventListener('keydown', event => {
 
 });
 
+// dodawanie losowych kotów inne
 
+// const generateRandomNumberWidth = () => {
+//     return Math.floor(Math.random() * (worldHeight - fallingCatWidth + 1));
+// };
+
+// setInterval(() => {
+//     let fallingCats = document.querySelectorAll('fallingCat');
+//     if (fallingCats.length < 20) {
+//         let newElement = document.createElement('div');
+//         newElement.classList.add('fallingCat');
+//         newElement.style.left ='${generateRandomNumberWidth()}px';
+        
+//     }
+    
+// }, 6000);
 
 // dodoawanie losowych kotów
 
 
 
-// function getRandom(maxSize) {
-//     return parseInt(Math.random() * 1000);
-//   }
+function getRandom(maxSize) {
+    return parseInt(Math.random() * 1600);
+  }
 
-//   function createSprite(element, x, y, w, h) {
-//     let result = new Object();
-//     result.element = element;
-//     result.x = x;
-//     result.y = y;
-//     result.w = w;
-//     result.h = h;
-//     return result;
-//   }
+  function createSprite(element, x, y, w, h) {
+    let result = new Object();
+    result.element = element;
+    result.x = x;
+    result.y = y;
+    result.w = w;
+    result.h = h;
+    return result;
+  }
   
 
-// function addfallingCat() {
+function addfallingCat() {
     
-//         let elementName = 'fallingCat' + getRandom(10000000);
-//         let fallingCat = createSprite(elementName, getRandom(450), -40, 35, 35);
+        let elementName = 'fallingCat' + getRandom(1000);
+        let fallingCat = createSprite(elementName, getRandom(450), -10, 60, 60);
 
-//         let element = document.createElement('div');
-//         element.id = fallingCat.element;
-//         element.className = 'fallingCat';
-//         document.children[0].appendChild(element);
+        let element = document.createElement('div');
+        element.id = fallingCat.element;
+        element.className = 'fallingCat';
+        element.style.left ='${generateRandomNumberWidth()}px';
+        document.children[0].appendChild(element);
+        setTimeout(() => {
+            element.remove();
+        }, 20000);
 
         
-//     };
+    };
 
 
-// setInterval(() => {
-//     addfallingCat();
-// }, 5000);
+setInterval(() => {
+    addfallingCat();
+}, 5000);
 
 
 
 
 
-// function addEnemy() {
-//   var interval = 50;
-//   if (iterations > 1500) {
-//     interval = 5;
-//   } else if (iterations > 1000) {
-//     interval = 20;
-//   } else if (iterations > 500) {
-//     interval = 35;
-//   }
-
-//   if (getRandom(interval) == 0) {
-//     var elementName = 'enemy' + getRandom(10000000);
-//     var enemy = createSprite(elementName, getRandom(450), -40, 35, 35);
-
-//     var element = document.createElement('div');
-//     element.id = enemy.element;
-//     element.className = 'enemy'; 
-//     document.children[0].appendChild(element);
-
-//     enemies[enemies.length] = enemy;
-//   }
-// }

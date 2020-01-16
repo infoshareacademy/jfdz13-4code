@@ -49,14 +49,12 @@
     width: 75px;
     height: 75px;
     position: absolute;
-    /* right: 0;
-    bottom: 0; */
     animation: falling 5s infinite linear;
 }
 
 @keyframes falling {
     0% {
-        transform: translateY(-640px);
+        transform: translateY(-500px);
     }
 
     100% {
