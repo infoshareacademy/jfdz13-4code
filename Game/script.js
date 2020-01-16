@@ -27,7 +27,7 @@ let fallingCatPositionY = parseInt(window.getComputedStyle(fallingCat).bottom);
 
 
 function startGame() {
-    gameStarted=true;
+    gameStarted = true;
     let startButton = document.getElementById("startPage");
     startTime = new Date().getTime();
     document.getElementById("startPage").style.display = "none";
@@ -67,26 +67,66 @@ window.addEventListener('keydown', event => {
 
 
 
+// dodoawanie losowych kotów
 
-// function component(width, height, color, x, y) {
-//   this.gamearea = gamearea;
-//   this.width = width;
-//   this.height = height;
-//   this.angle = 0;
-//   this.speed = 1;
-//   this.x = x;
-//   this.y = y;
-//   this.update = function() {
-//     ctx = myGameArea.context;
-//     ctx.save();
-//     ctx.translate(this.x, this.y);
-//     ctx.rotate(this.angle);
-//     ctx.fillStyle = color;
-//     ctx.fillRect(this.width / -2, this.height / -2, this.width, this.height);
-//     ctx.restore();
+
+
+function getRandom(maxSize) {
+    return parseInt(Math.random() * maxSize);
+  }
+
+  function createSprite(element, x, y, w, h) {
+    let result = new Object();
+    result.element = element;
+    result.x = x;
+    result.y = y;
+    result.w = w;
+    result.h = h;
+    return result;
+  }
+  
+
+function addfallingCat() {
+    
+        let elementName = 'fallingCat' + getRandom(10000000);
+        let fallingCat = createSprite(elementName, getRandom(450), -40, 35, 35);
+
+        let element = document.createElement('div');
+        element.id = fallingCat.element;
+        element.className = 'fallingCat';
+        document.children[0].appendChild(element);
+
+        
+    };
+
+
+setInterval(() => {
+    addfallingCat();
+}, 5000);
+
+
+
+
+
+// function addEnemy() {
+//   var interval = 50;
+//   if (iterations > 1500) {
+//     interval = 5;
+//   } else if (iterations > 1000) {
+//     interval = 20;
+//   } else if (iterations > 500) {
+//     interval = 35;
 //   }
-//   this.newPos = function() {
-//     this.x += this.speed * Math.sin(this.angle);
-//     this.y -= this.speed * Math.cos(this.angle);
+
+//   if (getRandom(interval) == 0) {
+//     var elementName = 'enemy' + getRandom(10000000);
+//     var enemy = createSprite(elementName, getRandom(450), -40, 35, 35);
+
+//     var element = document.createElement('div');
+//     element.id = enemy.element;
+//     element.className = 'enemy'; 
+//     document.children[0].appendChild(element);
+
+//     enemies[enemies.length] = enemy;
 //   }
 // }
