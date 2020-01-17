@@ -58,10 +58,7 @@ window.addEventListener('keydown', event => {
         superDog.style.transform = 'scaleX(1)';
         superDog.style.left = `${superDogPositionX}px`;
     }
-    if (event.code === 'ArrowUp' && superDogPositionY + superDogHeight < worldHeight) {
-        superDogPositionY += superDogSpeed;
-        superDog.style.bottom = `${superDogPositionY}px`;
-    }
+    
 
 });
 

@@ -14,11 +14,11 @@
 
 
 .game-container {
-    width: 90vw;
+    width: 100%;
     height: 90vh;
     padding: 20px;
-    background-color: peru;
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     visibility: hidden; 
@@ -29,19 +29,107 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: cadetblue;
+    display: flex;
+    overflow: hidden;
+    
 }
 
-.player {
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 630px;
+    background: lightblue;
+    
+    
+} 
+
+.sun {
+    position: absolute;
+    top: 50px;
+    right: 150px;
+    background: center / contain no-repeat url("img/sun.png");
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+    animation: rotation 30s infinite linear;
+    
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.cloud {
+    position: absolute;
+    top: 50px;
+    right: 350px;
+    background: center / contain no-repeat url("img/cloud.png");
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+    animation: floating 100s infinite linear;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateX(350px);
+    }
+
+    100% {
+        transform: translateX(-1300px);
+    }
+}
+
+
+
+.cloud2 {
+    position: absolute;
+    top: 100px;
+    left: 350px;
+    background: center / contain no-repeat url("img/cloud.png");
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+    animation: floating 100s infinite linear;
+}
+
+.cloud3 {
+    position: absolute;
+    top: 75px;
+    right: 450px;
+    background: center / contain no-repeat url("img/cloud.png");
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+    animation: floating 100s infinite linear;
+}
+
+
+
+.ground {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: green;
+    top: 630px;
+
+}
+
+
+.superDog {
     width: 128px;
     height: 128px;
     position: absolute;
     bottom: 0;
-}
-
-.superDog {
     left: 0;
     background: center / contain no-repeat url("img/superdog2.png");
+    z-index: 1;
 }
 
 .fallingCat {
@@ -50,6 +138,7 @@
     height: 75px;
     position: absolute;
     animation: falling 5s infinite linear;
+    z-index: 1;
 }
 
 @keyframes falling {
