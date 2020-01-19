@@ -132,13 +132,14 @@
     z-index: 1;
 }
 
-.fallingCat {
+.falling-cat {
     background: center / contain no-repeat url("img/cat.png");
     width: 75px;
     height: 75px;
     position: absolute;
-    animation: falling 5s infinite linear;
     z-index: 1;
+    left: 0;
+    top: 0;
 }
 
 @keyframes falling {
