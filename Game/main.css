@@ -124,10 +124,10 @@
 
 .superDog {
     width: 128px;
-    height: 128px;
+    height: 80px;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0px;
+    left: 0px;
     background: center / contain no-repeat url("img/superdog2.png");
     z-index: 1;
 }

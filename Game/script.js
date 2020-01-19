@@ -2,7 +2,7 @@ let gameStarted = false;
 
 const cats = [];
 const numberOfCats = 10;
-const catFallingOffsetStep = 50;
+const catFallingOffsetStep = 25;
 const catDimensions = {
     width: 75,
     height: 75,
@@ -26,7 +26,7 @@ const superDogHeight = parseInt(window.getComputedStyle(superDog).height);
 
 let superDogSpeed = 10;
 let superDogPositionX = parseInt(window.getComputedStyle(superDog).left);
-let superDogPositionY = parseInt(window.getComputedStyle(superDog).bottom);
+let superDogPositionY = parseInt(window.getComputedStyle(superDog).top);
 
 // let fallingCatPositionX = parseInt(window.getComputedStyle(fallingCat).right);
 // let fallingCatPositionY = parseInt(window.getComputedStyle(fallingCat).bottom);
@@ -54,18 +54,21 @@ function generateCats() {
 function checkCollision(cat) {
     const catX = parseInt(cat.node.style.left);
     const catY = parseInt(cat.node.style.top);
-    const dogX = parseInt(superDog.style.left);
-    const dogY = parseInt(superDog.style.top);
+    const dogX = superDogPositionX;
+    const dogY = superDogPositionY;
 
   var cat = {x: catX, y: catY, width: parseInt(catDimensions.width), height: parseInt(catDimensions.height)}
-  var dog = {x: dogX, y: dogY, width: 128, height: 128}
-  console.log(superDog.width, 'dsdsds')
+  var dog = {x: dogX, y: dogY, width: 128, height: 80}
+      
+
+      
   
   if (cat.x < dog.x + dog.width &&
      cat.x + cat.width > dog.x &&
      cat.y < dog.y + dog.height &&
      cat.y + cat.height > dog.y) {
       console.log("hit");
+      
       
   }
 }
@@ -74,6 +77,8 @@ function moveCats() {
     cats.forEach(cat => {
         cat.node.style.top = parseInt(cat.node.style.top) + catFallingOffsetStep + 'px';
         checkCollision(cat);
+        
+        
     })
  
 }
@@ -81,7 +86,7 @@ function moveCats() {
 
 
 function runCatsInterval() {
-    setInterval(() => moveCats(), 1000);
+    setInterval(() => moveCats(), 500);
 }
 
 function getRandom(maxSize) {
@@ -97,25 +102,30 @@ function startGame() {
     document.getElementById("game-container").style.visibility = "visible";
     generateCats();
     runCatsInterval();
+    
 }
 
-function checkCollision(cat) {
-    const catX = cat.node.style.left;
-    const catY = cat.node.style.top;
-    const dogX = superDog.style.left;
-    const dogY = superDog.style.top;
+// function checkCollision(cat) {
+//     const catX = cat.node.style.left;
+//     const catY = cat.node.style.top;
+//     const dogX = superDog.style.left;
+//     const dogY = superDog.style.top;
 
-  var cat = {x: catX, y: catY, width: catDimensions.width, height: catDimensions.height}
-  var dog = {x: dogX, y: dogY, width: superDog.width, height: superDog.height}
+
+//   var cat = {x: catX, y: catY, width: catDimensions.width, height: catDimensions.height}
+//   var dog = {x: dogX, y: dogY, width: superDog.width, height: superDog.height}
+
+//   console.log(dog.width);
   
-  if (cat.x < dog.x + dog.width &&
-     cat.x + cat.width > dog.x &&
-     cat.y < dog.y + dog.height &&
-     cat.y + cat.height > dog.y) {
-      console.log("hit");
+  
+//   if (cat.x < dog.x + dog.width &&
+//      cat.x + cat.width > dog.x &&
+//      cat.y < dog.y + dog.height &&
+//      cat.y + cat.height > dog.y) {
+//       console.log("hit");
       
-  }
-}
+//   }
+// }
 
 
 //sterowanie
