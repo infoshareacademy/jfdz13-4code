@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans%7CProza+Libre&display=swap" rel="stylesheet">
-    <title>Fundacja 4 Code - zmieniamy życie zwierzaków na lepsze</title>
+    <title>testy</title>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css3.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Proza+Libre&display=swap" rel="stylesheet">
 
@@ -23,15 +23,14 @@
 
         <div class="site-header">
             <div class="container">
-                    <div class="site-logo">
-                        <img class="logo" src="images/logo_grey.png" ALT="dog logo">
-                        <img class="name" src="images/name_grey.png" ALT="name">
-                </div>
-
-
-
                 <nav id="page-nav">
-                    <i class="fa fa-bars"></i>
+                    <div class="menu-curtain"></div>
+                    <div class="hamburger-icon" id="icon">
+                        <div class="icon-1" id="a"></div>
+                        <div class="icon-2" id="b"></div>
+                        <div class="icon-3" id="c"></div>
+                        <div class="clear"></div>
+                    </div>
                     <ul class="main-menu">
                         <li class="main-menu-item">
                             <a href="#">Home</a>
@@ -52,9 +51,13 @@
                             <a href="#newsletter">Newsletter</a>
                         </li>
                     </ul>
-
                 </nav>
             </div>
+            <div class="site-logo">
+                <img class="logo" src="images/logo_grey.png" ALT="dog logo">
+                <img class="name" src="images/name_grey.png" ALT="name">
+            </div>
+        
         </div>
         <header class=header>
             <div class="slider">
@@ -81,6 +84,7 @@
         <nav class="smallNav">
             <a href="#onas"><img class="smallNav__image" src="images/down-arrow.png" alt="arrow"></a>
         </nav>
+
         <div class="mainContainer" id="onas">
             <div class="description">
                 <h1 class="content__header"> Co robimy z pasją?</h1>
@@ -99,9 +103,9 @@
                     szukamy psiakom nowych domów... W normalnych, nieschroniskowych warunkach taki
                     pies ma szansę otworzyć się- wówczas łatwiej znaleźć dla niego odpowiednich i kochających opiekunów.
                 </p>
-            
+
                 <p class="content__description">Możesz adoptować psa będącego pod naszą opieką, możesz zostać
-                        wolontariuszem, możesz zostać darczyńcą, możesz… sam zdecyduj co możesz...</p>
+                    wolontariuszem, możesz zostać darczyńcą, możesz… sam zdecyduj co możesz...</p>
                 <div class="centerize">
                     <button class="section-action-gallery">
                         <a href="#newsletter">Przyłącz się do nas</a>
@@ -363,15 +367,15 @@
                 <p class="newsletter__text">Zapisz się na nasz newsletter. Raz w tygodniu wysyłamy komplet
                     informacji, co działo się u naszych podopiecznych i jakie wydarzenia planujemy w najbliższym czasie.
                     Nagrodą przy zapisie jest dostęp do darmowej gry.</p>
-                    <div class="newsletter__subscribe subscribe">
-                        <input class="subscribe__input" type="email" placeholder="Twój email">
-                        <div class="subscribe-button__animation">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <button class="subscribe__button">Zapisz się</button>
-                        </div>
+                <div class="newsletter__subscribe subscribe">
+                    <input class="subscribe__input" type="email" placeholder="Twój email"required>
+                    <div class="subscribe-button__animation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <button class="subscribe__button">Zapisz się</button>
                     </div>
+                </div>
             </div>
         </div>
         <footer class="footer">
@@ -393,10 +397,9 @@
                 </div>
             </div>
         </footer>
-
         <script src="scroll.js"></script>
         <script src="main.js"></script>
-        <script src="nav.js"></script>
+        <script src="new.js"></script>
         <script>
             intervalHandle = setInterval(slideTimer, 5000);
         </script>
