@@ -1,16 +1,20 @@
 let gameStarted = false;
 
-const cats = [];
 const numberOfCats = 10;
 const catFallingOffsetStep = 25;
+const catFallingSpeed = 50;
 const catDimensions = {
     width: 75,
     height: 75,
-}
+};
+const dogDimensions = {
+    width: 256,
+    height: 160
+};
 
 
-const superDog = document.getElementById('superDog');
-const world = document.getElementById('world');
+const superDog = document.querySelector('#superDog');
+const world = document.querySelector('#world');
 // const fallingCat = document.getElementById('fallingCat');
 
 
@@ -30,82 +34,109 @@ let superDogPositionY = parseInt(window.getComputedStyle(superDog).top);
 
 // let fallingCatPositionX = parseInt(window.getComputedStyle(fallingCat).right);
 // let fallingCatPositionY = parseInt(window.getComputedStyle(fallingCat).bottom);
+class Game {
+    constructor() {
+        this.startTime = null;
+        this.cats = [];
+        this.lastFrame = 0;
+    }
 
-function getCatNode() {
-    const catNode = document.createElement('div');
-    catNode.classList.add('falling-cat');
-    catNode.style.top = 0;
-    catNode.style.left = getRandom() + 'px';
-    return catNode;
+    startGame() {
+        console.log('start')
+        gameStarted = true;
+        this.startTime = new Date().getTime();
+        document.getElementById("startPage").style.display = "none";
+        document.getElementById("game-container").style.visibility = "visible";
+        this.generateCats();
+        requestAnimationFrame(this.update.bind(this));
+    }
+
+    generateCats() {
+        setInterval(() => {
+            const cat = new Cat();
+            cat.createNode();
+            world.appendChild(cat.node);
+            this.cats.push(cat);
+        }, 1000);
+    }
+
+    update(totalTime) {
+        if (!this.lastFrame)
+            this.lastFrame = totalTime;
+
+        const dt = (totalTime - this.lastFrame) / 1000; //delta time in seconds
+        this.lastFrame = totalTime;
+
+        this.moveCats(dt);
+
+        requestAnimationFrame(this.update.bind(this));
+    }
+
+    moveCats(dt) {
+        this.cats.forEach(cat => {
+            cat.update(dt);
+            this.checkCollision(cat);
+        });
+    }
+
+    checkCollision(cat) {
+        const catX = cat.x;
+        const catY = cat.y
+        const dogX = superDogPositionX;
+        const dogY = superDogPositionY;
+
+        var cat = { x: catX, y: catY, width: catDimensions.width, height: catDimensions.height }
+        var dog = { x: dogX, y: dogY, width: dogDimensions.width, height: dogDimensions.height }
+
+
+        if (cat.x < dog.x + dog.width &&
+            cat.x + cat.width > dog.x &&
+            cat.y < dog.y + dog.height &&
+            cat.y + cat.height > dog.y + dog.height / 2) {
+          
+            superDog.style.background = "red";
+            }
+    }
+
+};
+
+
+class Cat {
+    constructor() {
+        this.node = null;
+        this.y = 0;
+        this.x = getRandom();
+    }
+
+    createNode() {
+        const node = document.createElement('div');
+        node.classList.add('falling-cat');
+        node.style.top = 0;
+        node.style.left = this.x + 'px';
+        this.node = node;
+    }
+
+    update(dt) {
+        this.y += catFallingSpeed * dt;
+        this.node.style.top = this.y + 'px';
+    }
 }
 
-function generateCats() {
-    setInterval(() => {
-        const cat = {
-            x: 0,
-            y: 0,
-            node: getCatNode(),
-        };
-        world.appendChild(cat.node);
-        cats.push(cat);
-    }, 1000);
+class Player {
+
 }
 
+const game = new Game();
+document.getElementById("start_btn").addEventListener("click", () => game.startGame());
 //sprawdzanie kolizji
 
-function checkCollision(cat) {
-    const catX = parseInt(cat.node.style.left);
-    const catY = parseInt(cat.node.style.top);
-    const dogX = superDogPositionX;
-    const dogY = superDogPositionY;
 
-  var cat = {x: catX, y: catY, width: parseInt(catDimensions.width), height: parseInt(catDimensions.height)}
-  var dog = {x: dogX, y: dogY, width: 128, height: 80}
-      
 
-      
-  
-  if (cat.x < dog.x + dog.width &&
-     cat.x + cat.width > dog.x &&
-     cat.y < dog.y + dog.height &&
-     cat.y + cat.height > dog.y) {
-      console.log("hit");
-      
-      
-  }
-}
-
-function moveCats() {
-    cats.forEach(cat => {
-        cat.node.style.top = parseInt(cat.node.style.top) + catFallingOffsetStep + 'px';
-        checkCollision(cat);
-        
-        
-    })
- 
+function getRandom() {
+    return parseInt(Math.random() * (worldWidth-catDimensions.width));
 }
 
 
-
-function runCatsInterval() {
-    setInterval(() => moveCats(), 500);
-}
-
-function getRandom(maxSize) {
-    return parseInt(Math.random() * window.innerWidth);
-}
-
-function startGame() {
-    console.log('start')
-    gameStarted = true;
-    let startButton = document.getElementById("startPage");
-    startTime = new Date().getTime();
-    document.getElementById("startPage").style.display = "none";
-    document.getElementById("game-container").style.visibility = "visible";
-    generateCats();
-    runCatsInterval();
-    
-}
 
 // function checkCollision(cat) {
 //     const catX = cat.node.style.left;
@@ -118,14 +149,14 @@ function startGame() {
 //   var dog = {x: dogX, y: dogY, width: superDog.width, height: superDog.height}
 
 //   console.log(dog.width);
-  
-  
+
+
 //   if (cat.x < dog.x + dog.width &&
 //      cat.x + cat.width > dog.x &&
 //      cat.y < dog.y + dog.height &&
 //      cat.y + cat.height > dog.y) {
 //       console.log("hit");
-      
+
 //   }
 // }
 
@@ -135,7 +166,7 @@ function startGame() {
 
 //przyciski
 
-document.getElementById("start_btn").addEventListener("click", startGame);
+
 
 
 
@@ -152,7 +183,7 @@ window.addEventListener('keydown', event => {
         superDog.style.transform = 'scaleX(1)';
         superDog.style.left = `${superDogPositionX}px`;
     }
-    
+
 
 });
 
@@ -168,9 +199,9 @@ window.addEventListener('keydown', event => {
 //         let newElement = document.createElement('div');
 //         newElement.classList.add('fallingCat');
 //         newElement.style.left ='${generateRandomNumberWidth()}px';
-        
+
 //     }
-    
+
 // }, 6000);
 
 // dodoawanie losowych kotów
@@ -179,7 +210,7 @@ window.addEventListener('keydown', event => {
 
 
 
-  function createSprite(element, x, y, w, h) {
+function createSprite(element, x, y, w, h) {
     let result = new Object();
     result.element = element;
     result.x = x;
@@ -187,6 +218,6 @@ window.addEventListener('keydown', event => {
     result.w = w;
     result.h = h;
     return result;
-  }
-  
+}
+
 
