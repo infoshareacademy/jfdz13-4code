@@ -51,6 +51,8 @@ function generateCats() {
     }, 1000);
 }
 
+//sprawdzanie kolizji
+
 function checkCollision(cat) {
     const catX = parseInt(cat.node.style.left);
     const catY = parseInt(cat.node.style.top);
