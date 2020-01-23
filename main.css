@@ -204,6 +204,7 @@
     width: 18vw;
     min-width: 150px;
     height: 100%;
+  }
     .icon-1, .icon-2, .icon-3 {
       position: absolute;
       left: 25%;
