@@ -49,6 +49,7 @@ class Game {
         document.getElementById("game-container").style.visibility = "visible";
         this.generateCats();
         requestAnimationFrame(this.update.bind(this));
+        generateLife();
     }
 
     generateCats() {

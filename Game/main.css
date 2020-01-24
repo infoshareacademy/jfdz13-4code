@@ -1,17 +1,16 @@
-
 .startPage {
     width: 1000px;
     height: 650px;
-    border:1px solid black;
+    border: 1px solid black;
     background-image: url(img/main.png);
     background-repeat: no-repeat;
     align-content: center;
 }
+
 .startPage_menu {
     text-align: center;
     margin: 350px;
 }
-
 
 .game-container {
     width: 100%;
@@ -20,8 +19,7 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-    visibility: hidden; 
-    
+    visibility: hidden;
 }
 
 .world {
@@ -30,7 +28,6 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    
 }
 
 .sky {
@@ -38,9 +35,7 @@
     width: 100%;
     height: 100%;
     background: lightblue;
-    
-    
-} 
+}
 
 .sun {
     position: absolute;
@@ -51,14 +46,12 @@
     height: 120px;
     z-index: 2;
     animation: rotation 30s infinite linear;
-    
 }
 
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(359deg);
     }
@@ -79,13 +72,10 @@
     0% {
         transform: translateX(350px);
     }
-
     100% {
         transform: translateX(-1300px);
     }
 }
-
-
 
 .cloud2 {
     position: absolute;
@@ -109,17 +99,13 @@
     animation: floating 100s infinite linear;
 }
 
-
-
 .ground {
     position: absolute;
     width: 100%;
     height: 100px;
     background-color: green;
     bottom: 0;
-
 }
-
 
 .superDog {
     width: 256px;
@@ -145,9 +131,33 @@
     0% {
         transform: translateY(-500px);
     }
-
     100% {
         transform: translateY(0px);
     }
 }
 
+.heart {
+    background-image: url('./img/PikPng.com_instagram-png_3065627.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 60px;
+    background-size: contain;
+    z-index: 10000000;
+    position: absolute;
+    top: 0;
+}
+
+.score {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.lifetime {
+    width: 200px;
+    height: 70px;
+    position: relative;
+    right: 0;
+    position: absolute;
+}
