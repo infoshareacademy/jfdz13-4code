@@ -72,23 +72,24 @@ class Game {
         this.cats.forEach(cat => {
             cat.update(dt);
             this.checkCollision(cat);
+            
         });
     }
 
     checkCollision(cat) {
-        const catX = cat.x;
-        const catY = cat.y
-        const dogX = player.superDogPositionX;
-        const dogY = player.superDogPositionY;
+        let catX = cat.x;
+        let catY = cat.y
+        let dogX = player.dogX;
+        let dogY = player.dogY;
 
-        var cat = { x: catX, y: catY, width: catDimensions.width, height: catDimensions.height }
-        var dog = { x: dogX, y: dogY, width: dogDimensions.width, height: dogDimensions.height }
+        const cats = { x: catX, y: catY, width: catDimensions.width, height: catDimensions.height }
+        const dog = { x: dogX, y: dogY, width: dogDimensions.width, height: dogDimensions.height }
 
 
-        if (cat.x < dog.x + dog.width &&
-            cat.x + cat.width > dog.x &&
-            cat.y < dog.y + dog.height &&
-            cat.y + cat.height > dog.y + dog.height / 2) {
+        if (cats.x < dog.x + dog.width &&
+            cats.x + cats.width > dog.x &&
+            cats.y < dog.y + dog.height &&
+            cats.y + cats.height > dog.y + dog.height / 2) {
           
             console.log('hit');
             
@@ -120,37 +121,37 @@ class Cat {
 }
 
 class Player {
-    constructor(superDogPositionX,superDogPositionY){
-        this.dogX = superDogPositionX;
-        this.dogY = superDogPositionY;
+    constructor(){
+        this.dogX = parseInt(window.getComputedStyle(superDog).left);
+        this.dogY = 660;//parseInt(window.getComputedStyle(superDog).top);
     this.superDogWidth = parseInt(window.getComputedStyle(superDog).width);
     this.superDogHeight = parseInt(window.getComputedStyle(superDog).height);
     this.superDogSpeed = 10;
-    this.superDogPositionX = parseInt(window.getComputedStyle(superDog).left);
-    this.superDogPositionY = parseInt(window.getComputedStyle(superDog).top);
+    //this.superDogPositionX = parseInt(window.getComputedStyle(superDog).left);
+    //this.superDogPositionY = parseInt(window.getComputedStyle(superDog).top);
 }
 moveDog() {
 
 window.addEventListener('keydown', event => {
 
     console.log('event: ', event.code);
-    if (event.code === 'ArrowRight' && this.superDogPositionX + this.superDogWidth < worldWidth) {
-        this.superDogPositionX += this.superDogSpeed;
+    if (event.code === 'ArrowRight' && this.dogX + this.superDogWidth < worldWidth) {
+        this.dogX += this.superDogSpeed;
         superDog.style.transform = 'scaleX(-1)';
-        superDog.style.left = `${this.superDogPositionX}px`;
+        superDog.style.left = `${this.dogX}px`;
     }
-    if (event.code === 'ArrowLeft' && this.superDogPositionX > 0) {
-        this.superDogPositionX -= this.superDogSpeed;
+    if (event.code === 'ArrowLeft' && this.dogX > 0) {
+        this.dogX -= this.superDogSpeed;
         superDog.style.transform = 'scaleX(1)';
-        superDog.style.left = `${this.superDogPositionX}px`;
-    }
-
-
+        superDog.style.left = `${this.dogX}px`;
+    };
+    console.log(this.dogX, this.dogY);
+    
 });
 }}
 const game = new Game();
 document.getElementById("start_btn").addEventListener("click", () => game.startGame());
-const player = new Player(0,0);
+const player = new Player();
 //sprawdzanie kolizji
 
 
