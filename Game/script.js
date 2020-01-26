@@ -1,6 +1,6 @@
 let gameStarted = false;
 
-const numberOfCats = 10;
+const numberOfCats = 3;
 const catFallingOffsetStep = 25;
 const catFallingSpeed = 50;
 const catDimensions = {
@@ -22,15 +22,10 @@ const worldHeight = parseInt(window.getComputedStyle(world).height);
 const worldWidth = parseInt(window.getComputedStyle(world).width);
 
 
-const superDogWidth = parseInt(window.getComputedStyle(superDog).width);
-const superDogHeight = parseInt(window.getComputedStyle(superDog).height);
+
 
 // const fallingCatWidth = parseInt(window.getComputedStyle(fallingCat).width);
 // const fallingCatHeight = parseInt(window.getComputedStyle(fallingCat).height);
-
-let superDogSpeed = 10;
-let superDogPositionX = parseInt(window.getComputedStyle(superDog).left);
-let superDogPositionY = parseInt(window.getComputedStyle(superDog).top);
 
 // let fallingCatPositionX = parseInt(window.getComputedStyle(fallingCat).right);
 // let fallingCatPositionY = parseInt(window.getComputedStyle(fallingCat).bottom);
@@ -46,7 +41,8 @@ class Game {
         gameStarted = true;
         this.startTime = new Date().getTime();
         document.getElementById("startPage").style.display = "none";
-        document.getElementById("game-container").style.visibility = "visible";
+        document.getElementById("game-container").style.display = "flex";
+        player.moveDog()
         this.generateCats();
         requestAnimationFrame(this.update.bind(this));
     }
@@ -82,8 +78,8 @@ class Game {
     checkCollision(cat) {
         const catX = cat.x;
         const catY = cat.y
-        const dogX = superDogPositionX;
-        const dogY = superDogPositionY;
+        const dogX = player.superDogPositionX;
+        const dogY = player.superDogPositionY;
 
         var cat = { x: catX, y: catY, width: catDimensions.width, height: catDimensions.height }
         var dog = { x: dogX, y: dogY, width: dogDimensions.width, height: dogDimensions.height }
@@ -94,7 +90,8 @@ class Game {
             cat.y < dog.y + dog.height &&
             cat.y + cat.height > dog.y + dog.height / 2) {
           
-            superDog.style.background = "red";
+            console.log('hit');
+            
             }
     }
 
@@ -123,11 +120,37 @@ class Cat {
 }
 
 class Player {
-
+    constructor(superDogPositionX,superDogPositionY){
+        this.dogX = superDogPositionX;
+        this.dogY = superDogPositionY;
+    this.superDogWidth = parseInt(window.getComputedStyle(superDog).width);
+    this.superDogHeight = parseInt(window.getComputedStyle(superDog).height);
+    this.superDogSpeed = 10;
+    this.superDogPositionX = parseInt(window.getComputedStyle(superDog).left);
+    this.superDogPositionY = parseInt(window.getComputedStyle(superDog).top);
 }
+moveDog() {
 
+window.addEventListener('keydown', event => {
+
+    console.log('event: ', event.code);
+    if (event.code === 'ArrowRight' && this.superDogPositionX + this.superDogWidth < worldWidth) {
+        this.superDogPositionX += this.superDogSpeed;
+        superDog.style.transform = 'scaleX(-1)';
+        superDog.style.left = `${this.superDogPositionX}px`;
+    }
+    if (event.code === 'ArrowLeft' && this.superDogPositionX > 0) {
+        this.superDogPositionX -= this.superDogSpeed;
+        superDog.style.transform = 'scaleX(1)';
+        superDog.style.left = `${this.superDogPositionX}px`;
+    }
+
+
+});
+}}
 const game = new Game();
 document.getElementById("start_btn").addEventListener("click", () => game.startGame());
+const player = new Player(0,0);
 //sprawdzanie kolizji
 
 
@@ -170,22 +193,6 @@ function getRandom() {
 
 
 
-window.addEventListener('keydown', event => {
-
-    console.log('event: ', event.code);
-    if (event.code === 'ArrowRight' && superDogPositionX + superDogWidth < worldWidth) {
-        superDogPositionX += superDogSpeed;
-        superDog.style.transform = 'scaleX(-1)';
-        superDog.style.left = `${superDogPositionX}px`;
-    }
-    if (event.code === 'ArrowLeft' && superDogPositionX > 0) {
-        superDogPositionX -= superDogSpeed;
-        superDog.style.transform = 'scaleX(1)';
-        superDog.style.left = `${superDogPositionX}px`;
-    }
-
-
-});
 
 // dodawanie losowych kotów inne
 
@@ -219,5 +226,3 @@ function createSprite(element, x, y, w, h) {
     result.h = h;
     return result;
 }
-
-
