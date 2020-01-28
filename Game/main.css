@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
 * {
     margin:0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Proza Libre', sans-serif;
 }
->>>>>>> 1c1fbc6818a761d0a0a8b696bd9ea28050a1e7a9
 .startPage {
     margin: 100px auto;
     width: 1000px;
@@ -24,8 +21,6 @@
     margin-top: 350px;
 }
 
-<<<<<<< HEAD
-=======
 #start_btn {
     border: none;
     border-radius: 10px;
@@ -39,7 +34,6 @@
     margin: 15px;
 }
 
->>>>>>> 1c1fbc6818a761d0a0a8b696bd9ea28050a1e7a9
 .game-container {
     margin: 20px auto;
     max-width:1500px;
@@ -50,14 +44,10 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
-    visibility: hidden;
-=======
     background: url(img/background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
->>>>>>> 1c1fbc6818a761d0a0a8b696bd9ea28050a1e7a9
 }
 
 .world {
@@ -66,26 +56,18 @@
     position: relative;
     display: flex;
     overflow: hidden;
-<<<<<<< HEAD
-=======
     border: 5px solid black;
     
->>>>>>> 1c1fbc6818a761d0a0a8b696bd9ea28050a1e7a9
 }
 
 .sky {
     position: absolute;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    background: lightblue;
-}
-=======
     background-image: url(img/world-background.png);
     
     
 } 
->>>>>>> 1c1fbc6818a761d0a0a8b696bd9ea28050a1e7a9
 
 .sun {
     position: absolute;
@@ -120,13 +102,6 @@
 }
 
 @keyframes floating {
-<<<<<<< HEAD
-    0% {
-        transform: translateX(350px);
-    }
-=======
-
->>>>>>> 1c1fbc6818a761d0a0a8b696bd9ea28050a1e7a9
     100% {
         transform: translateX(-1500px);
     }
@@ -154,24 +129,16 @@
     animation: floating 65s infinite linear;
 }
 
-<<<<<<< HEAD
-.ground {
-=======
 
 
 /* .ground {
->>>>>>> 1c1fbc6818a761d0a0a8b696bd9ea28050a1e7a9
     position: absolute;
     width: 100%;
     height: 100px;
     background-color: green;
     bottom: 0;
-<<<<<<< HEAD
-}
-=======
 
 } */
->>>>>>> 1c1fbc6818a761d0a0a8b696bd9ea28050a1e7a9
 
 .superDog {
     width: 256px;
