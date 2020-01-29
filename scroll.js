@@ -25,3 +25,15 @@
     init();
     checkPosition();
 })();
+
+
+
+
+
+
+
+
+/*
+
+*/
+const header = document.querySelectorAll('h1');
