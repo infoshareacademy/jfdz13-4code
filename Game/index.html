@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,44 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans%7CProza+Libre&display=swap" rel="stylesheet">
     <title>SuperDog</title>
     <link rel="stylesheet" href="main.css">
-    
+
 
 </head>
+
 <body>
     <div class="startPage" id="startPage">
         <div class="startPage_menu">
-        <h1>Adventures of SuperDog</h1>
-        <h2>Instruction</h2>
-        <h3>Arrow buttons to move and jump</h3>
-        <h3>Spacebar to shoot</h3>
-        <input id="start_btn" type="button" value="Start game">
+            <div class="menu_top">
+                <input id="instruction_btn" class="button" type="button" value="Instrukcja">
+                <input id="ranking_btn" class="button" type="button" value="Ranking">
+            </div>
+            <input id="start_btn" class="button" type="button" value="Start">
+        </div>
+        <div class="instruction onclick">
+            <div class="container">
+                <div class="instruction-content">
+                    <p class="description">Nadeszły kocie wakacje. Każdy kochający podróże kot kupił bilet lotniczy i
+                        wyruszył w drogę. Niestety jeden z samolotów rozpadł się w powietrzu. Na ratunek kotom przybył
+                        Super Pies. Pomóż mu uratować wszystkie koty. Łap koty do koszyka.<br>Każdy kot to jeden punkt dla
+                        Ciebie.</p>
+                    <p class="description"><span>Poziom trudny: </span>Dodatkowo musisz unikać spadających odłamków
+                        samolotu. Za każdy odłamek tracisz jedno serduszko. Uważaj! Masz ich tylko trzy.</p>
+                    <div class="controlers">
+                        <h3>Sterowanie</h3>
+                        <p>Prawo Lewo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ranking onclick">
+            <div class="container">
+            </div>
+        </div>
+        <div class="start_game onclick">
+            <div class=" container">
+                <input type="button" class="easy" value="easy">
+                <input type="button" class="easy" value="hard">
+            </div>
         </div>
     </div>
     <div class="game-container" id="game-container">
@@ -28,11 +56,10 @@
             <div class="cloud"></div>
             <div class="cloud2"></div>
             <div class="cloud3"></div>
-            <div class="ground"></div>
-            </div>
-            
+        </div>
+
     </div>
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>
