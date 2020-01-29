@@ -1,0 +1,189 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Proza Libre', sans-serif;
+}
+.startPage {
+    margin: 100px auto;
+    width: 1000px;
+    height: 650px;
+    border: 1px solid black;
+    background-image: url(img/main.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    align-content: center;
+    overflow: hidden;
+}
+.startPage_menu {
+    text-align: center;
+    margin-top: 350px;
+}
+
+#start_btn {
+    border: none;
+    border-radius: 10px;
+    width: 240px;
+    height: 70px;
+    background-color: rgba(255, 166, 0, 0.808);
+    box-shadow: 0px 8px 10px rgba(255, 166, 0, 0.452), 
+    -10px 8px 15px rgba(255, 166, 0, 0.452), 10px 8px 15px rgba(255, 166, 0, 0.452);
+    font-size: 25px;
+    text-transform: uppercase;
+    margin: 15px;
+}
+
+.game-container {
+    margin: 20px auto;
+    max-width:1500px;
+    width: 100%;
+    max-height: 1000px;
+    height: 100%;
+    display: none;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background: url(img/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.world {
+    width: 1200px;
+    height: 800px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border: 5px solid black;
+    
+}
+
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/world-background.png);
+    
+    
+} 
+
+.sun {
+    position: absolute;
+    top: 50px;
+    right: 150px;
+    background: center / contain no-repeat url("img/sun.png");
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+    animation: rotation 30s infinite linear;
+    
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.cloud {
+    position: absolute;
+    top: 50px;
+    right: -50px;
+    background: center / contain no-repeat url("img/cloud.png");
+    width: 120px;
+    height: 120px;
+    z-index: 4;
+    animation: floating 60s infinite linear;
+
+}
+
+@keyframes floating {
+
+    100% {
+        transform: translateX(-1500px);
+    }
+}
+
+.cloud2 {
+    position: absolute;
+    top: 100px;
+    right: -100px;
+    background: center / contain no-repeat url("img/cloud.png");
+    width: 120px;
+    height: 120px;
+    z-index: 4;
+    animation: floating 70s infinite linear;
+}
+
+.cloud3 {
+    position: absolute;
+    top: 75px;
+    right: -450px;
+    background: center / contain no-repeat url("img/cloud.png");
+    width: 120px;
+    height: 120px;
+    z-index: 4;
+    animation: floating 65s infinite linear;
+}
+
+
+
+/* .ground {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: green;
+    bottom: 0;
+} */
+
+
+.superDog {
+    width: 256px;
+    height: 160px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: center / contain no-repeat url("img/superdog2.png");
+    z-index: 4;
+}
+
+.falling-cat {
+    background: center / contain no-repeat url("img/cat.png");
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(-500px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#timer {
+    position: absolute;    
+}
+
+#gameover {
+    width: 200px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    text-align: center;
+}
+
+
