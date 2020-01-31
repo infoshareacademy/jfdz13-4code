@@ -97,11 +97,20 @@
 
 .instruction-content {
     height: 850px;
-    margin: 80px 130px 100px 60px;
+    padding: 80px 130px 0 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     font-size: 22px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    right: 10px;
 }
 
 .description {
@@ -142,7 +151,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(img/world-background.png);
+    background-image: url("img/world-background.png");
 }
 
 .sun {
@@ -204,15 +213,6 @@
     animation: floating 65s infinite linear;
 }
 
-/* .ground {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    background-color: green;
-    bottom: 0;
-
-} */
-
 .superDog {
     width: 256px;
     height: 160px;
@@ -251,4 +251,32 @@
     100% {
         transform: translateY(0px);
     }
+}
+
+.score {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+    z-index: 10;
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+}
+.timer {
+    z-index: 10;
+    display: block;
+    background: #C9E498;
+    text-align: center;
+    font-size: 30px;
+    margin:10px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 110px;
+    height: 50px;
+    border-radius: 10px;
 }
