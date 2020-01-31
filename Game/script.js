@@ -7,6 +7,9 @@ const instructionContainer = document.querySelector(".instruction");
 const rankingContainer = document.querySelector(".ranking");
 const scoreElement = document.querySelector(".score")
 
+const display = document.querySelector('#time');
+const startTime = 120;
+
 rankingButton.addEventListener("click", () => rankingContainer.style.display = "block");
 instructionButton.addEventListener("click", () => instructionContainer.style.display = "block");
 
@@ -26,7 +29,7 @@ class World {
     }
     startTimer(duration, display) {
         let timer = duration, minutes, seconds;
-        setInterval(function () {
+        const intervalId = setInterval(() => {
             minutes = parseInt(timer / 60, 10);
             seconds = parseInt(timer % 60, 10);
             minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -34,6 +37,8 @@ class World {
             display.textContent = minutes + ":" + seconds;
             if (--timer < 0) {
                 timer = duration;
+                clearInterval(intervalId);
+                game.finishGame();
             }
         }, 1000);
     }
@@ -46,6 +51,8 @@ class Game {
         this.lastFrame = 0;
         this.cats = [];
         this.score = 0;
+        this.catGenerateIntervalId = null;
+        this.catsIntervalTime = 3000;
     }
 
     startGame() {
@@ -53,17 +60,14 @@ class Game {
         this.startTime = new Date().getTime();
         document.getElementById("startPage").style.display = "none";
         document.getElementById("game-container").style.display = "flex";
-        const display = document.querySelector('#time');
-        const startTime = 120;
         gameWorld.startTimer(startTime, display);
         player.handlePlayerMovement();
         this.generateCats();
         requestAnimationFrame(this.update.bind(this));
-        //requestAnimationFrame(gameWorld.render.bind(gameWorld));
     }
 
     generateCats() {
-        setInterval(() => {
+        this.catGenerateIntervalId = setInterval(() => {
             const fallingCat = new Cat(gameWorld.getRandom(), 0, 75, 75, 50);
             const node = document.createElement("div");
             node.classList.add("falling-cat");
@@ -72,7 +76,17 @@ class Game {
             fallingCat.node = node;
             world.appendChild(node);
             this.cats.push(fallingCat);
-        }, 1000);
+
+            clearInterval(this.catGenerateIntervalId);
+            if (this.catsIntervalTime > 505) {
+                this.catsIntervalTime -= 20;
+            }
+            this.generateCats();
+        }, this.catsIntervalTime);
+    }
+
+    stopCatsGeneration() {
+        clearInterval(this.catGenerateIntervalId);
     }
 
     update(totalTime) {
@@ -100,7 +114,6 @@ class Game {
                 game.scoreWhenCollison()
                 toRemove.push(idx);
                 cat.node.style.opacity = '0';
-                //dodajemy tu doliczanie punktu
                 setTimeout(() => {
                     world.removeChild(cat.node);
                 }, 2000);
@@ -139,9 +152,20 @@ class Game {
     }
 
     finishGame() {
-        gameFinished = true;
+        //gameFinished = true;
         this.stopCatsGeneration();
-        this.showGameOver();    
+        this.showGameOver();
+    }
+
+    showGameOver() {
+        const gameOverDimensions = {
+            width: 200,
+            height: 100
+        };
+        const e = document.getElementById('gameover');
+        e.style.top = gameWorld.height / 2 + "px";
+        e.style.left = ((gameWorld.width / 2) - gameOverDimensions.width / 2) + "px";
+        e.style.display = "block";
     }
 }
 
@@ -193,7 +217,7 @@ class Player extends GameObject {
             }
         });
     }
-    }
+}
 
 
 class Cat extends GameObject {
