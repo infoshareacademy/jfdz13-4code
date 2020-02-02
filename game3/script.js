@@ -18,7 +18,7 @@ const gameOverDimensions = {
     height: 100
 };
 
-const totalGameTime = 30; // całkowity czas gry w sekundach
+const totalGameTime = 120; // całkowity czas gry w sekundach
 
 
 const superDog = document.querySelector('#superDog');
@@ -45,7 +45,8 @@ class Game {
         this.remainingGameTime = totalGameTime;
         this.elapsedGameTime = 0
         this.catGenerateIntervalId = null;
-        this.catsInterval = 1000;
+        this.score = 0;
+        this.catsInterval = 5000;
     }
 
     startGame() {
@@ -60,20 +61,22 @@ class Game {
     }
 
     generateCats() {
+    
+         let interval = this.catsInterval;
+         if (this.elapsedGameTime >= totalGameTime/2)
+         {
+            interval -= 1000;
+         }
+         
         this.catGenerateIntervalId = setInterval(() => {
             const cat = new Cat();
             cat.createNode();
             world.appendChild(cat.node);
             this.cats.push(cat);
-
-            // oblicz nowy czas
             clearInterval(this.catGenerateIntervalId);            
-            if (this.catsInterval > 505) {
-                this.catsInterval -= 5;
-            }
             this.generateCats();
             
-        },  this.catsInterval);
+        }, interval);
     }
     
     stopCatsGeneration() {
@@ -92,12 +95,12 @@ class Game {
         this.remainingGameTime -= dt;
         
         const e = document.getElementById('timer');
-        e.innerHTML = "Remaining: " + parseInt(this.remainingGameTime);
+        e.innerHTML = "Remaining: " + parseInt(this.remainingGameTime) + " Score: " + this.score;
         
         if (this.remainingGameTime <= 0)
         {
             this.finishGame();       
-            return;
+            return this.score = 0;
         }
 
         requestAnimationFrame(this.update.bind(this));
@@ -114,14 +117,27 @@ class Game {
         e.style.top = worldHeight/2 + "px";
         e.style.left = ((worldWidth/2) - gameOverDimensions.width/2) + "px";
         e.style.display = "block";
+        e.innerHTML ="Game over!" + "      " + "Your score: " + "  "+ this.score 
+        
     }
 
     moveCats(dt) {
         this.cats.forEach(cat => {
             cat.update(dt);
-            this.checkCollision(cat);
-            
+            if (this.checkCollision(cat)) {
+                this.score += 1;
+                cat.remove = true;                
+                cat.node.style.display = "none";
+            }
         });
+        
+        // usuń złapane koty
+        let newCats = this.cats.filter(function(cat) {
+            return !cat.remove;
+        });
+
+        this.cats = newCats;
+
     }
 
     checkCollision(cat) {
@@ -137,11 +153,11 @@ class Game {
         if (cats.x < dog.x + dog.width &&
             cats.x + cats.width > dog.x &&
             cats.y < dog.y + dog.height &&
-            cats.y + cats.height > dog.y + dog.height / 2) {
-          
-            console.log('hit');
-            
-            }
+            cats.y + cats.height > dog.y + dog.height / 2) {          
+                console.log('hit');
+                return true;            
+        }
+        return false;
     }
 
 };
@@ -152,6 +168,7 @@ class Cat {
         this.node = null;
         this.y = 0;
         this.x = getRandom();
+        this.remove = false;
     }
 
     createNode() {
@@ -177,10 +194,11 @@ class Player {
     this.superDogSpeed = 10;
     //this.superDogPositionX = parseInt(window.getComputedStyle(superDog).left);
     //this.superDogPositionY = parseInt(window.getComputedStyle(superDog).top);
-}
-moveDog() {
+    }
 
-window.addEventListener('keydown', event => {
+    moveDog() {
+
+    window.addEventListener('keydown', event => {
 
     if (!gameFinished) {
     console.log('event: ', event.code);
@@ -197,8 +215,10 @@ window.addEventListener('keydown', event => {
     console.log(this.dogX, this.dogY);
     }
     
-});
-}}
+    }); 
+    }
+}
+
 const game = new Game();
 document.getElementById("start_btn").addEventListener("click", () => game.startGame());
 const player = new Player();
