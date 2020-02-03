@@ -34,19 +34,24 @@
                         samolotu. Za każdy odłamek tracisz jedno serduszko. Uważaj! Masz ich tylko trzy.</p>
                     <div class="controlers">
                         <h3>Sterowanie</h3>
-                        <p>Lewo Prawo</p>
+                        <p>
+                            <img src="img/leftarrow.png" alt="left-arrow"><span>Lewo </span><img src="img/rightarrow.png" alt="right-arrow"><span>Prawo</span></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="ranking onclick">
             <div class="container">
+                <div class="instruction-content">
+                <img class="close" src="img/close.png" alt="close-cross">
+            </div>
             </div>
         </div>
         <div class="start_game onclick">
-            <div class=" container">
-                <input type="button" class="easy" value="easy">
-                <input type="button" class="easy" value="hard">
+            <div class="startgame-container">
+                <p>Wybierz poziom gry:</p>
+                <input type="button" class="button easy" value="łatwy">
+                <input type="button" class="button hard" value="trudny">
             </div>
         </div>
     </div>
@@ -60,9 +65,7 @@
             <div class="cloud3"></div>
             <div class="lifetime"></div>
             <div class="timer"><span id="time">02:00</span></div>
-            <div class="game-over"><span>Game over</span></div>
             <div class='summary-section'>
-                <span>Niestety, przegrałeś</span>
                 <div><span class="score">Punkty: 0</span></div>
             </div>
             <div id="gameover">Game Over!</div>
