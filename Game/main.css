@@ -293,7 +293,7 @@
 }
 
 .falling-aeroplane {
-    background: center / contain no-repeat url("img/aeroplane-one.png");
+    background: center / contain no-repeat ;
     width: 75px;
     height: 75px;
     position: absolute;

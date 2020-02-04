@@ -3,7 +3,7 @@ const superDog = document.querySelector(".superDog");
 const scoreElement = document.querySelector(".score");
 
 const display = document.querySelector("#time");
-const startTime = 120;
+const startTime = 10;
 
 
 
@@ -34,6 +34,7 @@ class WelcomeWindow {
         this.startGameButton.addEventListener("click", () => this.startGameContainer.style.display = "block");
     }
 }
+
 class World {
     constructor() {
         this.width = parseInt(window.getComputedStyle(world).width);
@@ -84,6 +85,7 @@ class Game {
     startGame() {
         this.gameStarted = true;
         this.gameFinished = false;
+        gameMusic.play();
         this.startTime = new Date().getTime();
         document.getElementById("startPage").style.display = "none";
         document.getElementById("game-container").style.display = "flex";
@@ -122,7 +124,10 @@ class Game {
         this.aeroplaneGenerateIntervalId = setInterval(() => {
             const fallingAeroplane = new Aeroplane(gameWorld.getRandom(), 0, 75, 75, 60);
             const node = document.createElement("div");
+            const classOfAeroplanes = ["url('img/aeroplane-one.png')", "url('img/aeroplane-two.png')", "url('img/aeroplane-three.png')"];
+            let idx = Math.floor(Math.random() * classOfAeroplanes.length);
             node.classList.add("falling-aeroplane");
+            node.style.backgroundImage = classOfAeroplanes[idx];
             node.style.left = fallingAeroplane.x + "px";
             node.style.top = fallingAeroplane.y + "px";
             fallingAeroplane.node = node;
@@ -187,6 +192,7 @@ class Game {
                 }
                 if (aeroplane.isRescued) {
                     console.log("samolot");
+                    crashSound.play();
                     //tutaj usuwamy serduszko
                 }
             });
@@ -233,6 +239,8 @@ class Game {
         this.stopFallingObjectsGeneration();
         this.showGameOver();
         this.hardGameStarted = false;
+        gameMusic.pause();
+        finishMusic.play();
     }
 
     showGameOver() {
@@ -307,12 +315,14 @@ class Aeroplane extends GameObject {
 const welcomeWindow = new WelcomeWindow();
 const gameWorld = new World();
 const game = new Game();
-const deadCatSound = new Audio("sounds/deadcatsound.wav")
-const rescuedCatSound = new Audio("sounds/rescuedcatsound.wav")
+const deadCatSound = new Audio("sounds/deadcatsound.wav");
+const rescuedCatSound = new Audio("sounds/rescuedcatsound.wav");
+const finishMusic = new Audio("sounds/who.mp3");
+const gameMusic = new Audio("sounds/gameMusic.mp3");
+const crashSound = new Audio("sounds/crash.wav");
 
 const player = new Player(0, 630, 100, 150, 10);
 
 welcomeWindow.showWindow();
 welcomeWindow.closeWindow();
 gameWorld.clickedButton();
-
