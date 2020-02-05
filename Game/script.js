@@ -3,7 +3,7 @@ const superDog = document.querySelector(".superDog");
 const scoreElement = document.querySelector(".score");
 
 const display = document.querySelector("#time");
-const startTime = 10;
+const startTime = 120;
 
 
 
@@ -48,7 +48,7 @@ class World {
     }
 
     getRandom() {
-        return parseInt(Math.random() * (gameWorld.width - 75));
+        return Math.random() * (gameWorld.width - 75);
     }
     startTimer(duration, display) {
         let timer = duration, minutes, seconds;
@@ -166,7 +166,7 @@ class Game {
             }
             else if (cat.isRescued) {
                 cat.node.classList.add('rescued-cat');
-                game.scoreWhenCollison()
+                game.scoreWhenCollison();
                 rescuedCatSound.play();
                 catsToRemove.push(idx);
                 cat.node.style.opacity = '0';
@@ -191,7 +191,6 @@ class Game {
                     }, 1000)
                 }
                 if (aeroplane.isRescued) {
-                    console.log("samolot");
                     crashSound.play();
                     //tutaj usuwamy serduszko
                 }
