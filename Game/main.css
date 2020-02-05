@@ -351,3 +351,50 @@
     text-align: center;
     display: none;
 }
+
+.name-container {
+    display: none;
+    position: absolute;
+    font-size: 30px;
+    color:black;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.nickname-input {
+    border-radius: 5%;
+    height: 40px;
+    font-size: 35px;
+}
+
+
+.ranking-after {
+    display: none;
+    background-image:url("img/ranking-po.png");
+    z-index:1;
+    width: 600px;
+    height: 850px;
+    border: 2px solid black;
+    margin: 0 auto;
+    position: relative;
+}
+
+.table-easy{
+    position: absolute;
+    top: 240px;
+    left: 150px;
+    font-size: 22px;
+    line-height: inherit;
+    width: 430px;
+    word-spacing: 20px;
+}
+
+.table-hard{
+    position: absolute;
+    top: 510px;
+    left: 150px;
+    font-size: 22px;
+    line-height: inherit;
+    width: 430px;
+}

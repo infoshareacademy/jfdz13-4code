@@ -52,7 +52,7 @@ class Ranking {
         this.hardFifth = document.querySelector('.table-hard .hard-fifth');
     }
 
-    toLocalStorage() {
+    toLocalStorageEasy() {
 
         setTimeout(() => {
             let storedEasy = JSON.parse(localStorage.getItem('storedEasy'));
@@ -64,6 +64,21 @@ class Ranking {
                 return stored2.score - stored1.score
             })
             localStorage.setItem("storedEasy", JSON.stringify(storedEasy.slice(0, 5)));
+        }, 6000);
+    }
+
+    toLocalStorageHard() {
+        setTimeout(() => {
+            let storedHard = JSON.parse(localStorage.getItem('storedHard'));
+            if (!Array.isArray(storedHard)) {
+                storedHard = [];
+            }
+            storedHard.push({ name: this.name.value, score: this.score });
+            storedHard.sort((stored1, stored2) => {
+                return stored2.score - stored1.score
+            })
+            localStorage.setItem("storedHard", JSON.stringify(storedHard.slice(0, 5)));
+
         }, 6000);
     }
 
@@ -106,7 +121,7 @@ class World {
     }
 
     clickedButton() {
-        welcomeWindow.easyButton.addEventListener("click", () => game.startGame())
+        welcomeWindow.easyButton.addEventListener("click", () => game.startEasyGame())
         welcomeWindow.hardButton.addEventListener("click", () => game.startHardGame())
     }
 
@@ -144,6 +159,7 @@ class Game {
         this.catGenerateIntervalId = null;
         this.aeroplaneGenerateIntervalId = null;
         this.catsIntervalTime = 3000;
+        this.name = name;
     }
 
     startGame() {
@@ -310,11 +326,12 @@ class Game {
         gameMusic.pause();
         finishMusic.play();
         this.showNameContainer();
-        ranking.toLocalStorage();
         if (this.easyGameStarted) {
+            ranking.toLocalStorageEasy();
             ranking.easyRanking();
         }
-        else if (this.hardGameStarted) {
+        if (this.hardGameStarted) {
+            ranking.toLocalStorageHard();
             ranking.hardRanking();
         }
     }
@@ -341,6 +358,10 @@ class Game {
         e.style.top = gameWorld.height / 2 + "px";
         e.style.left = ((gameWorld.width / 2) - gameOverDimensions.width / 2) + "px";
         e.style.display = "block";
+        e.innerHTML = "Game over!" + "      " + "Punkty: " + "  " + this.score
+        this.gameOverId = setTimeout(() => {
+            e.style.display = 'none';
+        }, 2000);
     }
 }
 
