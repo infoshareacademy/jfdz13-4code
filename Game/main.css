@@ -1,42 +1,129 @@
 * {
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Proza Libre', sans-serif;
 }
+
 .startPage {
-    margin: 100px auto;
-    width: 1000px;
-    height: 650px;
-    border: 1px solid black;
-    background-image: url(img/main.png);
+    margin: 60px auto;
+    width: 1200px;
+    height: 800px;
+    background-image: url(img/titlepage.png);
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center;
     align-content: center;
     overflow: hidden;
 }
 
 .startPage_menu {
-    text-align: center;
-    margin-top: 350px;
+    width: 1200px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
 }
 
-#start_btn {
+.button {
     border: none;
     border-radius: 10px;
     width: 240px;
     height: 70px;
-    background-color: rgba(255, 166, 0, 0.808);
-    box-shadow: 0px 8px 10px rgba(255, 166, 0, 0.452), 
-    -10px 8px 15px rgba(255, 166, 0, 0.452), 10px 8px 15px rgba(255, 166, 0, 0.452);
+    background-color: rgba(255, 166, 0, 0.747);
+    box-shadow: 0px 4px 6px rgba(255, 166, 0, 0.452), -5px 4px 6px rgba(255, 166, 0, 0.452), 5px 4px 6px rgba(255, 166, 0, 0.452);
     font-size: 25px;
     text-transform: uppercase;
     margin: 15px;
+    cursor: pointer;
+}
+
+.menu_top {
+    margin: 110px 30px 0;
+}
+
+.menu_top .button {
+    margin-right: 30px;
+}
+
+#start_btn {
+    margin-bottom: 100px;
+    margin-right: 100px;
+    align-self: center;
+    animation: flashing 3s linear infinite;
+}
+
+@keyframes flashing {
+    0% {
+        background-color: rgba(255, 166, 0, 0.747);
+    }
+    50% {
+        background-color: rgb(255, 138, 51);
+    }
+    100% {
+        background-color: rgba(255, 166, 0, 0.747);
+    }
+}
+
+.onclick {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: none;
+}
+
+.container {
+    width: 600px;
+    height: 850px;
+    border: 2px solid black;
+    margin: 50px auto;
+    background-color: white;
+}
+
+.ranking .container {
+    background-image: url(img/ranking.png);
+    background-size: cover;
+}
+
+.instruction .container {
+    background-image: url(img/instrukcja.png);
+    background-size: cover;
+}
+
+.instruction-content {
+    height: 850px;
+    padding: 80px 130px 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 22px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    right: 10px;
+}
+
+.description {
+    text-align: center;
+}
+
+.description span {
+    font-weight: 700;
 }
 
 .game-container {
     margin: 20px auto;
-    max-width:1500px;
+    max-width: 1500px;
     width: 100%;
     max-height: 1000px;
     height: 100%;
@@ -57,17 +144,14 @@
     display: flex;
     overflow: hidden;
     border: 5px solid black;
-    
 }
 
 .sky {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(img/world-background.png);
-    
-    
-} 
+    background-image: url("img/world-background.png");
+}
 
 .sun {
     position: absolute;
@@ -98,7 +182,6 @@
     height: 120px;
     z-index: 4;
     animation: floating 60s infinite linear;
-
 }
 
 @keyframes floating {
@@ -129,25 +212,15 @@
     animation: floating 65s infinite linear;
 }
 
-
-
-/* .ground {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    background-color: green;
-    bottom: 0;
-
-} */
-
 .superDog {
     width: 256px;
     height: 160px;
     position: absolute;
-    bottom: 0px;
+    top: 630px;
     left: 0px;
     background: center / contain no-repeat url("img/superdog2.png");
     z-index: 4;
+    transform: scaleX(-1);
 }
 
 .falling-cat {
@@ -158,6 +231,16 @@
     z-index: 3;
     left: 0;
     top: 0;
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+
+.falling-cat.dead-cat {
+    background: center / contain no-repeat url("img/dead-cat.png")
+}
+
+.falling-cat.rescued-cat {
+    background: center / contain no-repeat url("img/rescued-cat.png")
 }
 
 @keyframes falling {
@@ -169,28 +252,88 @@
     }
 }
 
-.heart {
-    background-image: url('./img/PikPng.com_instagram-png_3065627.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 60px;
-    background-size: contain;
-    z-index: 10000000;
-    position: absolute;
-    top: 0;
-}
-
 .score {
     position: absolute;
     right: 10px;
     top: 10px;
+    z-index: 1;
+    z-index: 10;
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
 }
 
-.lifetime {
-    width: 200px;
-    height: 70px;
-    position: relative;
-    right: 0;
-    position: absolute;
+.timer {
+    z-index: 10;
+    display: block;
+    background: #C9E498;
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 110px;
+    height: 50px;
+    border-radius: 10px;
 }
+
+#gameover {
+    display: none;
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    text-align: center;
+}
+
+.name-container {
+    display: none;
+    position: absolute;
+    font-size: 30px;
+    color:black;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.nickname-input {
+    border-radius: 5%;
+    height: 40px;
+    font-size: 35px;
+}
+
+
+.ranking-after {
+    display: none;
+    background-image:url("img/ranking-po.png");
+    z-index:1;
+    width: 600px;
+    height: 850px;
+    border: 2px solid black;
+    margin: 0 auto;
+    position: relative;
+}
+
+.table-easy{
+    position: absolute;
+    top: 240px;
+    left: 150px;
+    font-size: 22px;
+    line-height: inherit;
+    width: 430px;
+    word-spacing: 20px;
+}
+
+.table-hard{
+    position: absolute;
+    top: 510px;
+    left: 150px;
+    font-size: 22px;
+    line-height: inherit;
+    width: 430px;
+}
+
+    
