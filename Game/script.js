@@ -3,7 +3,7 @@ const superDog = document.querySelector(".superDog");
 const scoreElement = document.querySelector(".score");
 
 const display = document.querySelector("#time");
-const startTime = 120;
+const startTime = 10;
 
 
 
@@ -34,6 +34,69 @@ class WelcomeWindow {
         this.startGameButton.addEventListener("click", () => this.startGameContainer.style.display = "block");
     }
 }
+
+class Ranking {
+    constructor() {
+        this.rankingAfter = document.querySelector('.ranking-after');
+
+        this.easyFirst = document.querySelector('.table-easy .easy-first');
+        this.easySecond = document.querySelector('.table-easy .easy-second');
+        this.easyThird = document.querySelector('.table-easy .easy-third');
+        this.easyFourth = document.querySelector('.table-easy .easy-fourth');
+        this.easyFifth = document.querySelector('.table-easy .easy-fifth');
+
+        this.hardFirst = document.querySelector('.table-hard .hard-first');
+        this.hardSecond = document.querySelector('.table-hard .hard-second');
+        this.hardThird = document.querySelector('.table-hard .hard-third');
+        this.hardFourth = document.querySelector('.table-hard .hard-fourth');
+        this.hardFifth = document.querySelector('.table-hard .hard-fifth');
+    }
+
+    toLocalStorage() {
+
+        setTimeout(() => {
+            let storedEasy = JSON.parse(localStorage.getItem('storedEasy'));
+            if (!Array.isArray(storedEasy)) {
+                storedEasy = [];
+            }
+            storedEasy.push({ name: game.name.value, score: game.score })
+            storedEasy.sort((stored1, stored2) => {
+                return stored2.score - stored1.score
+            })
+            localStorage.setItem("storedEasy", JSON.stringify(storedEasy.slice(0, 5)));
+        }, 6000);
+    }
+
+    //ranking
+    easyRanking() {
+        setTimeout(() => {
+            this.rankingAfter.style.display = 'block';
+
+            let storedEasy = JSON.parse(localStorage.getItem('storedEasy'));
+            this.easyFirst.innerHTML = storedEasy[0].name + storedEasy[0].score;
+            this.easySecond.innerHTML = storedEasy[1].name + storedEasy[1].score;
+            this.easyThird.innerHTML = storedEasy[2].name + storedEasy[2].score;
+            this.easyFourth.innerHTML = storedEasy[3].name + storedEasy[3].score;
+            this.easyFifth.innerHTML = storedEasy[4].name + storedEasy[4].score;
+        }, 7000);
+    };
+
+    hardRanking() {
+        setTimeout(() => {
+            this.rankingAfter.style.display = 'block';
+
+            let storedHard = JSON.parse(localStorage.getItem('storedHard'));
+            ranking.hardFirst.innerHTML = storedHard[0].name + storedHard[0].score;
+            ranking.hardSecond.innerHTML = storedHard[1].name + storedHard[1].score;
+            ranking.hardThird.innerHTML = storedHard[2].name + storedHard[2].score;
+            ranking.hardFourth.innerHTML = storedHard[3].name + storedHard[3].score;
+            ranking.hardFifth.innerHTML = storedHard[4].name + storedHard[4].score;
+
+        }, 7000);
+    };
+}
+
+
 
 class World {
     constructor() {
@@ -70,6 +133,7 @@ class World {
 class Game {
     constructor() {
         this.gameStarted = false;
+        this.easyGameStarted = false;
         this.hardGameStarted = false;
         this.gameFinished = false;
         this.startTime = null;
@@ -93,6 +157,11 @@ class Game {
         player.handlePlayerMovement();
         this.generateCats();
         requestAnimationFrame(this.update.bind(this));
+    }
+
+    startEasyGame() {
+        this.easyGameStarted = true;
+        this.startGame();
     }
 
     startHardGame() {
@@ -240,7 +309,28 @@ class Game {
         this.hardGameStarted = false;
         gameMusic.pause();
         finishMusic.play();
+        this.showNameContainer();
+        ranking.toLocalStorage();
+        if (this.easyGameStarted) {
+            ranking.easyRanking();
+        }
+        else if (this.hardGameStarted) {
+            ranking.hardRanking();
+        }
     }
+
+    showNameContainer() {
+        const nameContainerDimension = {
+            width: 200,
+            height: 100
+        };
+        setTimeout(() => {
+            const n = document.querySelector('.name-container');
+            n.style.top = gameWorld.height / 2 + "px";
+            n.style.left = ((gameWorld.width / 2) - nameContainerDimension.width / 2) + "px";
+            n.style.display = "block";
+        }, 2500);
+    };
 
     showGameOver() {
         const gameOverDimensions = {
@@ -314,6 +404,7 @@ class Aeroplane extends GameObject {
 const welcomeWindow = new WelcomeWindow();
 const gameWorld = new World();
 const game = new Game();
+const ranking = new Ranking;
 const deadCatSound = new Audio("sounds/deadcatsound.wav");
 const rescuedCatSound = new Audio("sounds/rescuedcatsound.wav");
 const finishMusic = new Audio("sounds/who.mp3");
