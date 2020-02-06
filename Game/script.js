@@ -3,7 +3,7 @@ const superDog = document.querySelector(".superDog");
 const scoreElement = document.querySelector(".score");
 
 const display = document.querySelector("#time");
-const startTime = 10;
+const startTime = 30;
 
 
 
