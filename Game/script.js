@@ -1,7 +1,6 @@
 const world = document.querySelector(".world");
 const superDog = document.querySelector(".superDog");
 const scoreElement = document.querySelector(".score");
-
 const display = document.querySelector("#time");
 const startTime = 10;
 
@@ -29,9 +28,18 @@ class WelcomeWindow {
     }
 
     showWindow() {
-        this.rankingButton.addEventListener("click", () => this.rankingContainer.style.display = "block");
-        this.instructionButton.addEventListener("click", () => this.instructionContainer.style.display = "block");
-        this.startGameButton.addEventListener("click", () => this.startGameContainer.style.display = "block");
+        this.rankingButton.addEventListener("click", () => {
+            this.rankingContainer.style.display = "block";
+            click.play();
+        });
+        this.instructionButton.addEventListener("click", () => {
+            this.instructionContainer.style.display = "block";
+            click.play();
+        });
+        this.startGameButton.addEventListener("click", () => {
+            this.startGameContainer.style.display = "block";
+            click.play();
+        });
     }
 }
 
@@ -337,31 +345,16 @@ class Game {
     }
 
     showNameContainer() {
-        const nameContainerDimension = {
-            width: 200,
-            height: 100
-        };
         setTimeout(() => {
             const n = document.querySelector('.name-container');
-            n.style.top = gameWorld.height / 2 + "px";
-            n.style.left = ((gameWorld.width / 2) - nameContainerDimension.width / 2) + "px";
-            n.style.display = "block";
+            n.style.display = "flex";
         }, 2500);
     };
 
     showGameOver() {
-        const gameOverDimensions = {
-            width: 200,
-            height: 100
-        };
         const e = document.getElementById('gameover');
-        e.style.top = gameWorld.height / 2 + "px";
-        e.style.left = ((gameWorld.width / 2) - gameOverDimensions.width / 2) + "px";
         e.style.display = "block";
-        e.innerHTML = "Game over!" + "      " + "Punkty: " + "  " + this.score
-        this.gameOverId = setTimeout(() => {
-            e.style.display = 'none';
-        }, 2000);
+        e.innerHTML = "Game over!" + "<br/>" + "Zdobyłeś " + this.score + " punktów";
     }
 }
 
@@ -431,6 +424,7 @@ const rescuedCatSound = new Audio("sounds/rescuedcatsound.wav");
 const finishMusic = new Audio("sounds/who.mp3");
 const gameMusic = new Audio("sounds/gameMusic.mp3");
 const crashSound = new Audio("sounds/crash.wav");
+const click = new Audio("sounds/click.wav")
 
 const player = new Player(0, 630, 100, 150, 10);
 
