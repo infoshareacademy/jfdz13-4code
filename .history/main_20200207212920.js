@@ -32,8 +32,6 @@ function radioClicked(sliderIdx) {
     intervalHandle = setInterval(slideTimer, 5000);
 }
 
-
-//ciasteczka
 class CookiesAccept {
     constructor(caName, caValue, caExpire){
         this.caName = caName;
@@ -106,7 +104,7 @@ const checkCookiesBanner = new CookiesAccept ("CookiesAccept","yes",30);
 checkCookiesBanner.checkCookies();
 
 
-//podświetlenie aktywnego elementu menu
+//podś
 
 let menuContainer = document.getElementById("mainNav");
 

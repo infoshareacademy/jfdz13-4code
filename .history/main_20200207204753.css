@@ -145,7 +145,7 @@ html {
     min-width: 200px;
 }
 
-.main-menu-item a:hover, .active {
+.main-menu-item a:hover,  {
     font-weight: 700;
     font-size: 1.6rem;
 }

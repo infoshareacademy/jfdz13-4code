@@ -145,12 +145,10 @@ html {
     min-width: 200px;
 }
 
-.main-menu-item a:hover, .active {
+.main-menu-item a:hover {
     font-weight: 700;
     font-size: 1.6rem;
 }
-
-
 
 .menu-curtain {
     position: absolute;
@@ -1601,7 +1599,7 @@ html {
     margin-bottom: 5px;
 }
 
-#cookiesbtn1{
+.#1{
     margin: 5px auto 0;
     background-color: red;
     color: white;

@@ -32,8 +32,6 @@ function radioClicked(sliderIdx) {
     intervalHandle = setInterval(slideTimer, 5000);
 }
 
-
-//ciasteczka
 class CookiesAccept {
     constructor(caName, caValue, caExpire){
         this.caName = caName;
@@ -101,22 +99,21 @@ class CookiesAccept {
         }
     }   
 }
-
 const checkCookiesBanner = new CookiesAccept ("CookiesAccept","yes",30);
 checkCookiesBanner.checkCookies();
 
 
-//podświetlenie aktywnego elementu menu
 
-let menuContainer = document.getElementById("mainNav");
+// Get the container element
+var btnContainer = document.getElementById("mainNav");
 
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("btn");
 
-let sections = menuContainer.getElementsByClassName("main-menu-item");
-
-
-for (let i = 0; i < sections.length; i++) {
-  sections[i].addEventListener("click", function() {
-    let current = document.getElementsByClassName("active");
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });

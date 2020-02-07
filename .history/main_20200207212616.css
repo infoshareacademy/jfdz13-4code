@@ -148,7 +148,10 @@ html {
 .main-menu-item a:hover, .active {
     font-weight: 700;
     font-size: 1.6rem;
+    text-decoration: underline;
 }
+
+.main-menu-item .active {
 
 
 

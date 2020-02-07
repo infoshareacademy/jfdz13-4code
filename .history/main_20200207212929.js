@@ -32,8 +32,6 @@ function radioClicked(sliderIdx) {
     intervalHandle = setInterval(slideTimer, 5000);
 }
 
-
-//ciasteczka
 class CookiesAccept {
     constructor(caName, caValue, caExpire){
         this.caName = caName;
