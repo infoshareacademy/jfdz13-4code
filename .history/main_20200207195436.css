@@ -1569,17 +1569,18 @@ html {
 .cookies-banner{
     display: none;
     position: fixed;
-    border: 2px solid #564147;
-    background-color: white;
+    font-family: 'Livvic', sans-serif;
+    border: 2px solid #564147; /*#47817E;*/
+    background-color: #e6fff3;
     max-width: 600px;
     width: 100%;
-    min-height: 100px;
-    bottom: 600px;
+    min-height: 80px;
+    bottom: 10px;
     left: 50%;
     transform: translate(-50%);
     border-radius: 10px;
     text-align: center;
-    z-index: 1;
+    z
 }
 
 .cookies-text{
@@ -1589,7 +1590,7 @@ html {
 
 .cookies-btn{
     margin: 5px auto 0;
-    background-color: green;
+    background-color: red;
     color: white;
     width:80px;
     height: 24px;

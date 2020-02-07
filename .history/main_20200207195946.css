@@ -1585,11 +1585,12 @@ html {
 .cookies-text{
     margin:0;
     padding: 5px;
+    font-size: ;
 }
 
 .cookies-btn{
     margin: 5px auto 0;
-    background-color: green;
+    background-color: red;
     color: white;
     width:80px;
     height: 24px;
