@@ -2,7 +2,8 @@ const world = document.querySelector(".world");
 const superDog = document.querySelector(".superDog");
 const scoreElement = document.querySelector(".score");
 const display = document.querySelector("#time");
-const startTime = 15;
+const nicknameButton = document.querySelector(".nickname-button");
+const startTime = 2;
 
 
 
@@ -12,8 +13,9 @@ class WelcomeWindow {
         this.instructionButton = document.querySelector("#instruction_btn");
         this.rankingButton = document.querySelector("#ranking_btn");
         this.startGameButton = document.querySelector("#start_btn");
+        this.playAgainButton = document.querySelector("#play-again");
         this.instructionContainer = document.querySelector(".instruction");
-        this.rankingContainer = document.querySelector(".ranking");
+        this.rankingContainer = document.querySelector(".ranking-after");
         this.startGameContainer = document.querySelector(".start_game");
         this.easyButton = document.querySelector(".easy");
         this.hardButton = document.querySelector(".hard");
@@ -21,8 +23,8 @@ class WelcomeWindow {
     closeWindow() {
         this.closeCross.forEach(cross => {
             cross.addEventListener("click", () => {
-                this.rankingContainer.style.display = "none"
-                this.instructionContainer.style.display = "none"
+                this.rankingContainer.style.display = "none";
+                this.instructionContainer.style.display = "none";
             })
         });
     }
@@ -30,6 +32,7 @@ class WelcomeWindow {
     showWindow() {
         this.rankingButton.addEventListener("click", () => {
             this.rankingContainer.style.display = "block";
+            this.rankingContainer.classList.remove("is-game-over");
             click.play();
         });
         this.instructionButton.addEventListener("click", () => {
@@ -40,51 +43,35 @@ class WelcomeWindow {
             this.startGameContainer.style.display = "block";
             click.play();
         });
+        this.playAgainButton.addEventListener("click", () => {
+            document.location.reload();
+            click.play();
+        });
     }
 }
 
 class Ranking {
     constructor() {
-        this.name = document.querySelector('.nickname-input')
+        this.name = document.querySelector('.nickname-input');
         this.rankingAfter = document.querySelector('.ranking-after');
 
-        this.easyFirstName = document.querySelectorAll('.table-easy .easy-first-name');
-        this.easySecondName = document.querySelectorAll('.table-easy .easy-second-name');
-        this.easyThirdName = document.querySelectorAll('.table-easy .easy-third-name');
-        this.easyFourthName = document.querySelectorAll('.table-easy .easy-fourth-name');
-        this.easyFifthName = document.querySelectorAll('.table-easy .easy-fifth-name');
-
-        this.easyFirstPoints = document.querySelectorAll('.table-easy .easy-first-points');
-        this.easySecondPoints = document.querySelectorAll('.table-easy .easy-second-points');
-        this.easyThirdPoints = document.querySelectorAll('.table-easy .easy-third-points');
-        this.easyFourthPoints = document.querySelectorAll('.table-easy .easy-fourth-points');
-        this.easyFifthPoints = document.querySelectorAll('.table-easy .easy-fifth-points');
-
-        this.hardFirstName = document.querySelectorAll('.table-hard .hard-first-name');
-        this.hardSecondName = document.querySelectorAll('.table-hard .hard-second-name');
-        this.hardThirdName = document.querySelectorAll('.table-hard .hard-third-name');
-        this.hardFourthName = document.querySelectorAll('.table-hard .hard-fourth-name');
-        this.hardFifthName = document.querySelectorAll('.table-hard .hard-fifth-name');
-
-        this.hardFirstPoints = document.querySelectorAll('.table-hard .hard-first-points');
-        this.hardSecondPoints = document.querySelectorAll('.table-hard .hard-second-points');
-        this.hardThirdPoints = document.querySelectorAll('.table-hard .hard-third-points');
-        this.hardFourthPoints = document.querySelectorAll('.table-hard .hard-fourth-points');
-        this.hardFifthPoints = document.querySelectorAll('.table-hard .hard-fifth-points');
+        this.easyNames = document.querySelectorAll(".table-easy .name");
+        this.easyPoints = document.querySelectorAll(".table-easy .points");
+        this.hardNames = document.querySelectorAll(".table-hard .name");
+        this.hardPoints = document.querySelectorAll(".table-hard .points");
     }
 
     toLocalStorageEasy() {
-
         setTimeout(() => {
             game.name = document.querySelector(".nickname-input").value;
             let storedEasy = JSON.parse(localStorage.getItem('storedEasy'));
             if (!Array.isArray(storedEasy)) {
                 storedEasy = [];
-            }
+            };
             storedEasy.push({ name: game.name, score: game.score })
             storedEasy.sort((stored1, stored2) => {
                 return stored2.score - stored1.score
-            })
+            });
             localStorage.setItem("storedEasy", JSON.stringify(storedEasy.slice(0, 5)));
         }, 6000);
     }
@@ -105,39 +92,30 @@ class Ranking {
     }
 
 
-    getRanking(idx) {
-        let storedEasy = JSON.parse(localStorage.getItem('storedEasy'));
-        this.easyFirstName[idx].innerHTML = storedEasy[0].name;
-        this.easySecondName[idx].innerHTML = storedEasy[1].name;
-        this.easyThirdName[idx].innerHTML = storedEasy[2].name;
-        this.easyFourthName[idx].innerHTML = storedEasy[3].name;
-        this.easyFifthName[idx].innerHTML = storedEasy[4].name;
+    getRanking() {
+        let ranking = JSON.parse(localStorage.getItem('storedEasy'));
+        if (!Array.isArray(ranking)) {
+            ranking = [];
+        }
 
-        this.easyFirstPoints[idx].innerHTML = storedEasy[0].score;
-        this.easySecondPoints[idx].innerHTML = storedEasy[1].score;
-        this.easyThirdPoints[idx].innerHTML = storedEasy[2].score;
-        this.easyFourthPoints[idx].innerHTML = storedEasy[3].score;
-        this.easyFifthPoints[idx].innerHTML = storedEasy[4].score;
+        for (let i = 0; i < ranking.length; ++i) {
+            this.easyNames[i].innerHTML = ranking[i].name;
+            this.easyPoints[i].innerHTML = ranking[i].score;
+        }
 
-        let storedHard = JSON.parse(localStorage.getItem('storedHard'));
-        this.hardFirstName[idx].innerHTML = storedHard[0].name;
-        this.hardSecondName[idx].innerHTML = storedHard[1].name;
-        this.hardThirdName[idx].innerHTML = storedHard[2].name;
-        this.hardFourthName[idx].innerHTML = storedHard[3].name;
-        this.hardFifthName[idx].innerHTML = storedHard[4].name;
-
-        this.hardFirstPoints[idx].innerHTML = storedHard[0].score;
-        this.hardSecondPoints[idx].innerHTML = storedHard[1].score;
-        this.hardThirdPoints[idx].innerHTML = storedHard[2].score;
-        this.hardFourthPoints[idx].innerHTML = storedHard[3].score;
-        this.hardFifthPoints[idx].innerHTML = storedHard[4].score;
+        ranking = JSON.parse(localStorage.getItem('storedHard'));
+        if (!Array.isArray(ranking)) {
+            ranking = [];
+        }
+        for (let i = 0; i < ranking.length; ++i) {
+            this.hardNames[i].innerHTML = ranking[i].name;
+            this.hardPoints[i].innerHTML = ranking[i].score;
+        }
     }
 
     showRanking() {
-        ranking.getRanking(1);
-        setTimeout(() => {
-            this.rankingAfter.style.display = 'block';
-        }, 7000);
+        this.getRanking();
+        this.rankingAfter.style.display = 'block';
     };
 }
 
@@ -149,8 +127,14 @@ class World {
     }
 
     clickedButton() {
-        welcomeWindow.easyButton.addEventListener("click", () => game.startEasyGame())
-        welcomeWindow.hardButton.addEventListener("click", () => game.startHardGame())
+        welcomeWindow.easyButton.addEventListener("click", () => {
+            game.startEasyGame()
+            click.play();
+        })
+        welcomeWindow.hardButton.addEventListener("click", () => {
+            game.startHardGame()
+            click.play();
+        })
     }
 
     getRandom() {
@@ -187,7 +171,16 @@ class Game {
         this.catGenerateIntervalId = null;
         this.aeroplaneGenerateIntervalId = null;
         this.catsIntervalTime = 3000;
-        //this.name = name.value;
+
+        nicknameButton.addEventListener('click', event => {
+            ranking.showRanking();
+        });
+
+        document.querySelector('.nickname-input').addEventListener('keypress', event => {
+            if(event.code === 'Enter') {
+                ranking.showRanking();
+            }
+        })
     }
 
     startGame() {
@@ -360,41 +353,33 @@ class Game {
         else {
             ranking.toLocalStorageHard();
         }
-        ranking.showRanking();
+        ranking.rankingAfter.classList.add("is-game-over");
     }
-    /*OPCJA Z PRZEKIEROWANIEM NA RANKING, PO NACIŚNIECIU ENTER, ALE NIE DZIAŁA:(
- 
-        if (this.easyGameStarted) {
-            window.addEventListener("keyup", (event) => {
-                if (event.code === 'Enter') {
-                    ranking.toLocalStorageEasy();
-                    ranking.easyRanking();
-                }
-            })
-        }
-        if (this.hardGameStarted) {
-            window.addEventListener("keyup", (event) => {
-                if (event.code === 'Enter') {
-                    ranking.toLocalStorageHard();
-                    ranking.hardRanking();
-                }
-            })
-        }
- 
-    }
-*/
 
     showNameContainer() {
         setTimeout(() => {
-            const n = document.querySelector('.name-container');
-            n.style.display = "flex";
+            const nameContainer = document.querySelector('.name-container');
+            nameContainer.style.display = "flex";
         }, 2500);
     };
 
     showGameOver() {
-        const e = document.getElementById('gameover');
-        e.style.display = "block";
-        e.innerHTML = "Game over!" + "<br/>" + "Zdobyłeś " + this.score + " punktów";
+        const gameoverContainer = document.getElementById('gameover');
+        gameoverContainer.style.display = "block";
+        gameoverContainer.innerHTML = "Game over!" + "<br/>" + "Zdobyłeś " + this.score + " punktów";
+    }
+
+    gameOver() {
+        const gameoverContainer = document.getElementById('gameover');
+        gameoverContainer.style.display = "block";
+        this.gameFinished = true;
+        this.gameStarted = false;
+        this.stopFallingObjectsGeneration();
+        this.showGameOver();
+        this.hardGameStarted = false;
+        gameMusic.pause();
+        ranking.rankingAfter.classList.add("is-game-over");
+        ranking.showRanking();
     }
 }
 
@@ -430,9 +415,11 @@ class Player extends GameObject {
 
 class Life {
     constructor() {
-        this.life = 3;
+        this.life = null;
+        this.hearts = [];
     }
     generateLife() {
+        this.life = 3;
         let right = 0;
         for (let i = 0; i < this.life; i++) {
             const heart = document.createElement('div');
@@ -441,12 +428,18 @@ class Life {
             heart.style.height = '50px'
             heart.style.right = `${right}px`
             world.appendChild(heart);
-            right += 68
+            right += 68;
+            this.hearts.push(heart);
         }
     }
     looseLife() {
-        const heart = document.querySelector('.heart')
-        heart.remove();
+        this.life--;
+        this.hearts[0].remove();
+        this.hearts.splice(0, 1);
+        if (this.life === 0) {
+            game.gameOver();
+        }
+
     }
 }
 
@@ -496,5 +489,4 @@ const player = new Player(0, 630, 100, 150, 10);
 welcomeWindow.showWindow();
 welcomeWindow.closeWindow();
 gameWorld.clickedButton();
-ranking.getRanking(0);
-life.looseLife();
+ranking.getRanking();
