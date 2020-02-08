@@ -51,7 +51,7 @@ class CookiesAccept {
 
     cookiesBannerVisible(){
         const cookiesBanner = document.getElementById('cookiesbanner');
-        cookiesBanner.style.display='block';
+        cookiesBanner.style.display='flex';
     }
 
     cookiesBannerInVisible(){
@@ -94,7 +94,8 @@ class CookiesAccept {
         const checkCookiecValue = this.readThisCookies();
         if (checkCookiecValue === 'yes'){
             this.cookiesBannerInVisible();
-        }else{
+        }
+        else{
             this.cookiesBannerVisible();
             this.pressAcceptBtn();
         }
@@ -103,7 +104,7 @@ class CookiesAccept {
 
 const checkCookiesBanner = new CookiesAccept ("CookiesAccept","yes",30);
 checkCookiesBanner.checkCookies();
-
+checkCookiesBanner.pressDeclineBtn();
 
 //podświetlenie aktywnego elementu menu
 
