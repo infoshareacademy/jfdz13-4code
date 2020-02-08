@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans%7CProza+Libre&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <title>SuperDog</title>
+    <link rel="stylesheet" href="main.css">
+
+
+</head>
+
+<body>
+    <div class="startPage" id="startPage">
+        <div class="startPage_menu">
+            <div class="menu_top">
+                <input id="instruction_btn" class="button" type="button" value="Instrukcja">
+                <input id="ranking_btn" class="button" type="button" value="Ranking">
+            </div>
+            <input id="start_btn" class="button" type="button" value="Start">
+        </div>
+        <div class="instruction onclick">
+            <div class="container">
+                <div class="instruction-content">
+                    <img class="close" src="img/close.png" alt="close-cross">
+                    <p class="description">Nadeszły kocie wakacje. Każdy kochający podróże kot kupił bilet lotniczy i
+                        wyruszył w drogę. Niestety jeden z samolotów rozpadł się w powietrzu. Na ratunek kotom przybył
+                        Super Pies. Pomóż mu uratować wszystkie koty. Łap koty do koszyka.<br>Każdy kot to jeden punkt
+                        dla
+                        Ciebie.</p>
+                    <p class="description"><span>Poziom trudny: </span>Dodatkowo musisz unikać spadających odłamków
+                        samolotu. Za każdy odłamek tracisz jedno serduszko. Uważaj! Masz ich tylko trzy.</p>
+                    <div class="controlers">
+                        <h3>Sterowanie</h3>
+                        <p>
+                            <img src="img/leftarrow.png" alt="left-arrow"><span>Lewo </span><img
+                                src="img/rightarrow.png" alt="right-arrow"><span>Prawo</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="ranking onclick">
+            <div class="container">
+                <div class="ranking-content">
+                    <img class="close" src="img/close.png" alt="close-cross">
+                    <table class="table-easy">
+                        <tr>
+                            <td class="first">1</td>
+                            <td class="easy-first-name name"></td>
+                            <td class="easy-first-points points"></td>
+
+                        </tr>
+                        <tr>
+                            <td class="first">2</td>
+                            <td class="easy-second-name name"></td>
+                                <td class="easy-second-points points"></td>
+
+                        </tr>
+                        <tr>
+                            <td class="first">3</td>
+                            <td class="easy-third-name name"></td>
+                            <td class="easy-third-points points"></td>
+
+                        </tr>
+                        <tr>
+                            <td class="first">4</td>
+                            <td class="easy-fourth-name name"></td>
+                            <td class="easy-fourth-points points"></td>
+                        </tr>
+                        <tr>
+                            <td class="first">5</td>
+                            <td class="easy-fifth-name name"></td>
+                            <td class="easy-fifth-points points"></td>
+
+                        </tr>
+                    </table>
+                    <table class="table-hard">
+                        <tr>
+                            <td class="first">1</td>
+                            <td class="hard-first-name name"></td>
+                            <td class="hard-first-points points"></td>
+
+                        </tr>
+                        <tr>
+                            <td class="first">2</td>
+                            <td class="hard-second-name name"></td>
+                            <td class="hard-second-points points"></td>
+
+                        </tr>
+                        <tr>
+                            <td class="first">3</td>
+                            <td class="hard-third-name name"></td>
+                            <td class="hard-third-points points"></td>
+
+                        </tr>
+                        <tr>
+                            <td class="first">4</td>
+                            <td class="hard-fourth-name name"></td>
+                            <td class="hard-fourth-points points"></td>
+
+                        </tr>
+                        <tr>
+                            <td class="first">5</td>
+                            <td class="hard-fifth-name name"></td>
+                            <td class="hard-fifth-points points"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div> -->
+        <div class="start_game onclick">
+            <div class="startgame-container">
+                <p>Wybierz poziom gry:</p>
+                <input type="button" class="button easy" value="łatwy">
+                <input type="button" class="button hard" value="trudny">
+            </div>
+        </div>
+    </div>
+    <div class="game-container" id="game-container">
+        <div class="world" id="world">
+            <div class="superDog" id="superDog"></div>
+            <div class="sun"></div>
+            <div class="sky"></div>
+            <div class="cloud"></div>
+            <div class="cloud2"></div>
+            <div class="cloud3"></div>
+            <div class="lifetime"></div>
+            <div class="timer"><span id="time">02:00</span></div>
+            <div class='summary-section'>
+                <div><span class="score">Punkty: 0</span></div>
+            </div>
+            <div id="gameover">Game Over!</div>
+            <div class="name-container">
+                <p class="player-name">Podaj swoje imię</p>
+                <input class="nickname-input" type="text" placeholder="Twoje imię" required>
+                <button class="nickname-button">Zapisz</button>
+            </div>
+        </div>
+    </div>
+    <div class="ranking-after">
+        <div class="container-after">
+            <img class="close" src="img/close.png" alt="close-cross">
+            <table class="table-easy">
+                <tr>
+                    <td class="first">1</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+
+                </tr>
+                <tr>
+                    <td class="first">2</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+
+                </tr>
+                <tr>
+                    <td class="first">3</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+
+                </tr>
+                <tr>
+                    <td class="first">4</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+                </tr>
+                <tr>
+                    <td class="first">5</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+
+                </tr>
+            </table>
+            <table class="table-hard">
+                <tr>
+                    <td class="first">1</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+
+                </tr>
+                <tr>
+                    <td class="first">2</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+
+                </tr>
+                <tr>
+                    <td class="first">3</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+
+                </tr>
+                <tr>
+                    <td class="first">4</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+
+                </tr>
+                <tr>
+                    <td class="first">5</td>
+                    <td class="name"></td>
+                    <td class="points"></td>
+                </tr>
+            </table>
+            <button class="play-again" id="play-again">Zagraj ponownie</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

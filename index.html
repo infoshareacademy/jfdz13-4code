@@ -22,13 +22,14 @@
 <body>
   <main>
     <div class="cookies-banner" id="cookiesbanner">
-      <p class="cookies-text" key="lang048">
+      <div class="cookies-text" key="lang048">
         Na naszej stronie używamy plików cookies. Jeśli nie chcesz aby pliki
         cookies się zapisywały, zmień ustawienia przeglądarki.
-      </p>
-
-      <div class="cookies-btn" id="cookiesbtn">Akceptuje</div>
-      <div class="cookies-btn1" id="cookiesbtn1">Odrzucam</div>
+      </div>
+    <div class="cookies-buttons-container">
+      <div class="cookies-btn cookies-button" id="cookiesbtn">Akceptuję</div>
+      <div class="cookies-btn1 cookies-button" id="cookiesbtn1">Odrzucam</div>
+    </div>
     </div>
 
     <div class="site-header">
@@ -468,9 +469,6 @@
             </div>
           </div>
         </div>
-
-
-        <!--  -->
         <div class="newsletter" id="newsletter">
           <img class="newsletter__image" src="images/newletter.png" alt="peopleandmails" />
           <div class="newsletter__container">
@@ -481,7 +479,7 @@
               planujemy w najbliższym czasie. Nagrodą przy zapisie jest dostęp do
               darmowej gry.
             </p>
-            <form action="game.html">
+            <form action="Game/index.html">
               <div class="newsletter__subscribe subscribe">
                 <input class="subscribe__input" type="email" placeholder="Twój email" required
                   title="Wpisz swój adres e-mail" />

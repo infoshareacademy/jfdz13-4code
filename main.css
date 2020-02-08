@@ -150,8 +150,6 @@ html {
     font-size: 1.6rem;
 }
 
-
-
 .menu-curtain {
     position: absolute;
     top: 0;
@@ -275,7 +273,7 @@ html {
         min-width: 140px;
     }
     .hamburger-icon {
-       left: 2px;
+        left: 2px;
     }
 }
 
@@ -287,7 +285,7 @@ html {
         margin-left: 10px;
     }
     .hamburger-icon {
-       left: 1px;
+        left: 1px;
     }
 }
 
@@ -892,7 +890,7 @@ html {
     background-size: cover;
     margin-bottom: var(--gutter);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     position: relative;
     display: block;
     margin-top: 3rem;
@@ -978,8 +976,6 @@ html {
         width: 50%;
     }
 }
-
-
 
 .centerize {
     text-align: center;
@@ -1369,88 +1365,108 @@ html {
     }
 }
 
-
-.cookies-banner{
+.cookies-banner {
     display: none;
     position: fixed;
-    /* border: 2px solid #564147; */
     background-color: grey;
-    max-width: 800px;
-    height: 300px;
+    bottom: 0;
+    height: 150px;
     width: 100%;
     min-height: 100px;
     margin-top: 200px;
     left: 50%;
     transform: translate(-50%);
-    /* border-radius: 10px; */
-    text-align: center;
     z-index: 1;
     opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-
-
-.cookies-text{
-    margin:0;
-    padding: 55px;
+.cookies-text {
+    margin-left: 30px;
     color: white;
-    font-size: 25px;
-    font: 'Open Sans', sans-serif;
-    
+    font-size: 23px;
+    font-family: var(--font-text);
+    text-align: center;
 }
 
-.cookies-btn{
-    box-shadow: 3px 4px 0px 0px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border-radius:15px;
-	border:1px solid #29668f;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:7px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
-    display: inline;
-   
+.cookies-buttons-container {
+    display: flex;
 }
 
-#cookiesbtn1{
-    box-shadow: 3px 4px 0px 0px #899599;
-	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-    background-color:#ededed;
-    margin-left: 35px;
-	border-radius:15px;
-	border:1px solid #d6bcd6;
-	display:inline-block;
-	cursor:pointer;
-	color:#3a8a9e;
-	font-family:Arial;
-	font-size:17px;
-	padding:7px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #e1e2ed;
-    display: inline
+.cookies-button {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-family: var(--font-text);
+    padding: 5px;
 }
 
-.cookies-btn:hover{
-    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
+.cookies-btn:hover {
+    background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color: #408c99;
 }
 
-.cookies-btn:active{
-    position:relative;
-	top:1px;
+.cookies-btn:active {
+    position: relative;
+    top: 1px;
 }
 
-#cookiesbtn1:hover{
-    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-	background-color:#bab1ba;
+#cookiesbtn1:hover {
+    background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color: #bab1ba;
 }
 
-#cookiesbtn1:active{
-    position:relative;
-    top:1px;
+#cookiesbtn1:active {
+    position: relative;
+    top: 1px;
+}
+
+@media (max-width: 1200px) {
+    .cookies-text {
+        font-size: 22px;
+    }
+    .cookies-button {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 850px) {
+    .cookies-text {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .cookies-button {
+        font-size: 16px;
+    }
+    .cookies-banner {
+        flex-direction: column;
+        height: 140px;
+    }
+}
+
+@media (max-width: 680px) {
+    .cookies-text {
+        font-size: 14px;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    .cookies-button {
+        font-size: 12px;
+        width: 80px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+   .cookies-banner {
+       flex-direction: column;
+       height: 130px;
+   }
 }
