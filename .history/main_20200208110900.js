@@ -101,7 +101,7 @@ class CookiesAccept {
     }   
 }
 
-const checkCookiesBanner = new CookiesAccept ("CookiesAccept","yes",30);
+const checkCookiesBanner = new CookiesAccept ("CookiesAccept","yes",3000);
 checkCookiesBanner.checkCookies();
 
 
