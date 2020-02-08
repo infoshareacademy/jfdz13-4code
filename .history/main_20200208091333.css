@@ -1588,8 +1588,7 @@ html {
 
 .cookies-text{
     margin:0;
-    padding: 15px;
-    
+    padding: 5px;
 }
 
 .cookies-btn{
@@ -1606,7 +1605,7 @@ html {
 
 #cookiesbtn1{
     margin: 5px auto 0;
-    background-color: blue;
+    background-color: red;
     color: white;
     font-size: 12px;
     font-weight: 500;

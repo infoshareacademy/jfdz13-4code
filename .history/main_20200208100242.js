@@ -69,9 +69,10 @@ class CookiesAccept {
     }
 
     pressDeclineBtn(){
-        const pressedBtnNo = document.getElementById('cookiesbtn1');
+        const pressedBtnNo = document.getElementById('cookiesbtn');
         
         pressedBtn.addEventListener('click',()=>{
+            this.setCookies (this.caName, this.caValue, this.caExpire);
             this.cookiesBannerInVisible();
         })
     }

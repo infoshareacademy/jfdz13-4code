@@ -69,10 +69,11 @@ class CookiesAccept {
     }
 
     pressDeclineBtn(){
-        const pressedBtnNo = document.getElementById('cookiesbtn1');
+        const pressedBtnNo = document.getElementsById('cookiesbtn1');
         
-        pressedBtn.addEventListener('click',()=>{
-            this.cookiesBannerInVisible();
+        pressedBtnNo.addEventListener('click',()=>{
+            const cookiesBanner = document.getElementById('cookiesbanner');
+            cookiesBanner.style.display='none';
         })
     }
 

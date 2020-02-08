@@ -72,7 +72,7 @@ class CookiesAccept {
         const pressedBtnNo = document.getElementById('cookiesbtn1');
         
         pressedBtn.addEventListener('click',()=>{
-            this.cookiesBannerInVisible();
+            document.getElementById("startPage").style.display = "none";
         })
     }
 
