@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="gallery.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Proza+Libre&display=swap" rel="stylesheet">
 
@@ -182,33 +183,114 @@
         <div class="Gallerycontainer" id="gallery">
             <div class="description">
                 <h1 class="content__header"> Kim są nasi podopieczni?</h1>
-
+                <div class="image-gallery">
+                    <img src="images/zd11.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="img-1" />
+            
+            
+                    <img src="images/zd21.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="img-2" />
+            
+            
+                    <img src="images/zd30.jpg" style="width:100%;" onclick=" openModal();currentSlide(3) " class="img-3 " />
+            
+            
+                    <img src="images/zd55.jpg " style="width:100%;" onclick="openModal();currentSlide(4) " class="img-4 " />
+            
+            
+                    <img src="images/zd16.jpg " style="width:100% " onclick="openModal();currentSlide(5) " class="img-5 " />
+            
+            
+                    <img src="images/zd22.jpg " style="width:100% " onclick="openModal();currentSlide(6) " class="img-6 " />
+            
+            
+                    <img src="images/zd19.jpg " style="width:100% " onclick="openModal();currentSlide(7) " class="img-7 " />
+            
+                    <img src="images/zd29.jpg " style="width:100% " onclick="openModal();currentSlide(8) " class="img-8 " />
+            
+                </div>
+            
+            
+                <div id="myModal " class="modal ">
+                    <span class="close cursor " onclick="closeModal() ">&times;</span>
+                    <div class="modal-content ">
+            
+                        <div class="mySlides ">
+                            <div class="numbertext ">1 / 8</div>
+                            <img src="images/zd11.jpg " style="width:100% ">
+                        </div>
+            
+                        <div class="mySlides ">
+                            <div class="numbertext ">2 / 8</div>
+                            <img src="images/zd21.jpg " style="width:100% ">
+                        </div>
+                        <div class="mySlides ">
+                            <div class="numbertext ">3 / 8</div>
+                            <img src="images/zd33.jpg " style="width:100% ">
+                        </div>
+                        <div class="mySlides ">
+                            <div class="numbertext ">4 / 8</div>
+                            <img src="images/zd20.jpg " style="width:100% ">
+                        </div>
+                        <div class="mySlides ">
+                            <div class="numbertext ">5 / 8</div>
+                            <img src="images/zd16.jpg " style="width:100% ">
+                        </div>
+                        <div class="mySlides ">
+                            <div class="numbertext ">6 / 8</div>
+                            <img src="images/zd22.jpg " style="width:100% ">
+                        </div>
+                        <div class="mySlides ">
+                            <div class="numbertext ">7 / 8</div>
+                            <img src="images/zd19.jpg " style="width:100% ">
+                        </div>
+                        <div class="mySlides ">
+                            <div class="numbertext ">8 / 8</div>
+                            <img src="images/zd29.jpg " style="width:100% ">
+                        </div>
+            
+            
+                        <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
+                        <a class="next " onclick="plusSlides(1) ">&#10095;</a>
+            
+                        <div class="caption-container ">
+                            <p id="caption "></p>
+            
+            
+            
+                            <div class="column">
+                                <img class="demo cursor" src="images/zd11.jpg" style="width:100%" onclick="currentSlide(1)" alt="Kiciuś">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/zd21.jpg" style="width:100%" onclick="currentSlide(2)" alt="Śnieżek">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/zd33.jpg" style="width:100%" onclick="currentSlide(3)" alt="X-Men">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/zd20.jpg" style="width:100%" onclick="currentSlide(4)" alt="Jogi">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/zd16.jpg" style="width:100%" onclick="currentSlide(5)" alt="Miluś">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/zd22.jpg" style="width:100%" onclick="currentSlide(6)" alt="Mruczek">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/zd19.jpg" style="width:100%" onclick="currentSlide(7)" alt="Punio">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="images/zd29.jpg" style="width:100%" onclick="currentSlide(8)" alt="Ciapek">
+                            </div>
+            
             </div>
-            <div class="image-gallery">
-                <a href="images/zdj11.jpg" class="img-1">
-                    <i class="icon ion-md-expand"></i>
-                </a>
-                <a href="images/zdj12.jpg" class="img-2">
-                    <i class="icon ion-md-expand"></i>
-                </a>
-                <a href="images/zdj13.jpg" class="img-3">
-                    <i class="icon ion-md-expand"></i>
-                </a>
-                <a href="images/zdj14.jpg" class="img-4">
-                    <i class="icon ion-md-expand"></i>
-                </a>
-                <a href="images/zdj15.jpg" class="img-5">
-                    <i class="icon ion-md-expand"></i>
-                </a>
-                <a href="images/zdj16.jpg" class="img-6">
-                    <i class="icon ion-md-expand"></i>
-                </a>
-                <a href="images/zdj20.jpg" class="img-7">
-                    <i class="icon ion-md-expand"></i>
-                </a>
+            
+                        </div>
+           
+</div>
 
 
-            </div>
+</div>
+
+
 
         </div>
         <div class="about-us-break-picture"></div>
@@ -400,6 +482,7 @@
         <script src="scroll.js"></script>
         <script src="main.js"></script>
         <script src="nav.js"></script>
+        <script src="gallery.js"></script>
         <script>
             intervalHandle = setInterval(slideTimer, 5000);
         </script>
