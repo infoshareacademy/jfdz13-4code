@@ -1593,7 +1593,6 @@ html {
     padding: 55px;
     color: white;
     font-size: 25px;
-    font: 'Open Sans', sans-serif;
     
 }
 
@@ -1619,7 +1618,7 @@ html {
     box-shadow: 3px 4px 0px 0px #899599;
 	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
     background-color:#ededed;
-    margin-left: 35px;
+    margin
 	border-radius:15px;
 	border:1px solid #d6bcd6;
 	display:inline-block;
@@ -1643,12 +1642,12 @@ html {
 	top:1px;
 }
 
-#cookiesbtn1:hover{
+.cookies-btn1:hover{
     background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
 	background-color:#bab1ba;
 }
 
-#cookiesbtn1:active{
+.cookies-btn1:active{
     position:relative;
     top:1px;
 }

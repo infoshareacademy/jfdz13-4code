@@ -1593,7 +1593,7 @@ html {
     padding: 55px;
     color: white;
     font-size: 25px;
-    font: 'Open Sans', sans-serif;
+    font: ;
     
 }
 
@@ -1652,3 +1652,6 @@ html {
     position:relative;
     top:1px;
 }
+
+/* -font-title: 'Proza Libre', sans-serif;
+    --font-text: 'Open Sans', sans-serif; */

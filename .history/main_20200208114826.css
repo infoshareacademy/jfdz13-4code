@@ -1574,7 +1574,7 @@ html {
     /* border: 2px solid #564147; */
     background-color: grey;
     max-width: 800px;
-    height: 300px;
+    height: 400px;
     width: 100%;
     min-height: 100px;
     margin-top: 200px;
@@ -1590,65 +1590,39 @@ html {
 
 .cookies-text{
     margin:0;
-    padding: 55px;
+    padding: 25px;
     color: white;
-    font-size: 25px;
-    font: 'Open Sans', sans-serif;
+    
     
 }
 
 .cookies-btn{
-    box-shadow: 3px 4px 0px 0px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border-radius:15px;
-	border:1px solid #29668f;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:7px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
-    display: inline;
-   
+    margin: 5px auto 0;
+    background-color: green;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top:5px;
+    margin-right: 15px;
+    cursor:pointer;
+    display: inline
 }
 
 #cookiesbtn1{
-    box-shadow: 3px 4px 0px 0px #899599;
-	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-    background-color:#ededed;
-    margin-left: 35px;
-	border-radius:15px;
-	border:1px solid #d6bcd6;
-	display:inline-block;
-	cursor:pointer;
-	color:#3a8a9e;
-	font-family:Arial;
-	font-size:17px;
-	padding:7px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #e1e2ed;
+    margin: 5px auto 0;
+    background-color: blue;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top:5px;
+    cursor:pointer;
     display: inline
 }
 
 .cookies-btn:hover{
-    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
+    outline: 2px solid brown;
 }
 
 .cookies-btn:active{
-    position:relative;
-	top:1px;
-}
-
-#cookiesbtn1:hover{
-    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-	background-color:#bab1ba;
-}
-
-#cookiesbtn1:active{
-    position:relative;
-    top:1px;
+    opacity: 0.4
 }
