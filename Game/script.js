@@ -45,6 +45,7 @@ class WelcomeWindow {
 
 class Ranking {
     constructor() {
+        this.name = document.querySelector('.nickname-input')
         this.rankingAfter = document.querySelector('.ranking-after');
 
         this.easyFirstName = document.querySelectorAll('.table-easy .easy-first-name');
@@ -100,9 +101,9 @@ class Ranking {
                 return stored2.score - stored1.score
             })
             localStorage.setItem("storedHard", JSON.stringify(storedHard.slice(0, 5)));
-
         }, 6000);
     }
+
 
     getRanking(idx) {
         let storedEasy = JSON.parse(localStorage.getItem('storedEasy'));
@@ -139,8 +140,6 @@ class Ranking {
         }, 7000);
     };
 }
-
-
 
 class World {
     constructor() {
@@ -188,7 +187,7 @@ class Game {
         this.catGenerateIntervalId = null;
         this.aeroplaneGenerateIntervalId = null;
         this.catsIntervalTime = 3000;
-        this.name = name;
+        //this.name = name.value;
     }
 
     startGame() {
@@ -313,8 +312,6 @@ class Game {
             });
             this.aeroplanes = this.aeroplanes.filter((aeroplane, idx) => aeroplanesToRemove.indexOf(idx) < 0);
         }
-
-
         requestAnimationFrame(this.update.bind(this));
     }
 
@@ -365,6 +362,27 @@ class Game {
         }
         ranking.showRanking();
     }
+    /*OPCJA Z PRZEKIEROWANIEM NA RANKING, PO NACIŚNIECIU ENTER, ALE NIE DZIAŁA:(
+ 
+        if (this.easyGameStarted) {
+            window.addEventListener("keyup", (event) => {
+                if (event.code === 'Enter') {
+                    ranking.toLocalStorageEasy();
+                    ranking.easyRanking();
+                }
+            })
+        }
+        if (this.hardGameStarted) {
+            window.addEventListener("keyup", (event) => {
+                if (event.code === 'Enter') {
+                    ranking.toLocalStorageHard();
+                    ranking.hardRanking();
+                }
+            })
+        }
+ 
+    }
+*/
 
     showNameContainer() {
         setTimeout(() => {
