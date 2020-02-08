@@ -359,11 +359,9 @@ class Game {
         this.showNameContainer();
         if (this.easyGameStarted) {
             ranking.toLocalStorageEasy();
-            //ranking.easyRanking();
         }
         else {
             ranking.toLocalStorageHard();
-            //ranking.hardRanking();
         }
         ranking.showRanking();
     }
@@ -413,10 +411,12 @@ class Player extends GameObject {
 }
 
 class Life {
-    LIFE = 3
+    constructor() {
+        this.life = 3;
+    }
     generateLife() {
         let right = 0;
-        for (let i = 0; i < this.LIFE; i++) {
+        for (let i = 0; i < this.life; i++) {
             const heart = document.createElement('div');
             heart.classList.add('heart');
             heart.style.width = '68px'
@@ -427,8 +427,8 @@ class Life {
         }
     }
     looseLife() {
-           let heart = document.querySelector('.heart')
-            heart.remove();
+        const heart = document.querySelector('.heart')
+        heart.remove();
     }
 }
 
@@ -479,3 +479,4 @@ welcomeWindow.showWindow();
 welcomeWindow.closeWindow();
 gameWorld.clickedButton();
 ranking.getRanking(0);
+life.looseLife();
